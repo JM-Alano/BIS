@@ -13,7 +13,7 @@
 
     <div class = "main_div_manage">
         <div>
-             <input type="file"  name = "image" accept = ".jpg, .jpeg, .png" id = "images"><br>
+             <input type="file"  name = "image" accept = ".jpg, .jpeg, .png" id = "images" style = "border:1px solid #4A9D4f; padding-top:10px;"><br>
             <label for="">Firstname</label><br>
             <input type="text" name = "firstname_add" id = "firstname_add" placeholder = "Enter Firstname" required><br>
 
@@ -42,13 +42,15 @@
                 <label for="">House no.</label><br>
             <input type="text" id = "house_no_add" name = "house_no_add" placeholder = "Enter House number" required><br>
 
-            <label for="">Sitio/Pook</label><br>
-            <input type = "text" id = "sitio_pook_add" name = "sitio_pook_add" placeholder = "Enter Sitio/Pook" required/> <br>
+          
                
         </div>
 
 
-         <div>
+         <div style = "margin-top:-20px;">
+         <label for="">Sitio/Pook</label><br>
+         <input type = "text" id = "sitio_pook_add" name = "sitio_pook_add" placeholder = "Enter Sitio/Pook" required/> <br>
+
                  <label for="">Purpose</label><br>
                 <input type="text" id = "purpose_add" name = "purpose_add" placeholder = "Enter valid Purpose" required><br>
 
