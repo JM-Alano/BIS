@@ -65,7 +65,7 @@
           
             <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><br>
           
-            <input type="submit" id = "submit" name = "login"> 
+            <input type="submit" id = "submit" name = "login" value = "LOGIN"> 
             </div>
             
           

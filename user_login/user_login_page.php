@@ -55,7 +55,7 @@
 
     <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><span style = "margin-left:50px; font-size:0.9rem; "> <a href="forgot_password.php" style = "color:rgba(246, 247, 248, 0.8);">Forgot Password</a> </span><br>
 
-    <input type="submit" id = "submit" name = "user_login"> 
+    <input type="submit" id = "submit" name = "user_login" value = "LOGIN"> 
     </div>
 
 
@@ -70,7 +70,7 @@
     </div>
     
     <div id = "logo">
-        <img src="../asset/image/logo/67a89c6822aa9.png" alt="" id = "img_logo">
+        <img src="../asset/image/logo/67a89c6822aa9.png" alt="" id = "img_logo" >
     </div>
 
 
@@ -129,10 +129,10 @@
     
 <script>
                 let logo = document.getElementById("logo_get_image").textContent;
-             
-                ;
+                let logo_image = document.getElementById("logo_get_image").textContent;
+                
                 document.getElementById("logo_image").src =  logo;
-           
+                document.getElementById("img_logo").src =  logo_image;
                 
         </script>
 </body>

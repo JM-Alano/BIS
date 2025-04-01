@@ -124,7 +124,9 @@
         </nav>
        
         <section id = "home">
-            <img src="asset/image/background/bg.jpg" alt="">
+            <img src="asset/image/background/bg.jpg" alt="" id = "barangay_image_id">
+
+          
             <h1><span >WELCOME TO</span> <br> <span style = "color:#F5E402;">BARANGAY <span id = "barangay_name-2nd">PALIPARAN</span> </span></h1>
             
         </section>
@@ -405,13 +407,17 @@
 
         <script>
                 let logo = document.getElementById("logo_get").textContent;
+                let barangay_image = document.getElementById("barangay_image").textContent;
                 let barangay_name = document.getElementById("barangay_get").textContent;
                 let municipality = document.getElementById("municipality_get").textContent;
+                
                 document.getElementById("municipality").innerHTML =  municipality;
                 document.getElementById("barangay_name").innerHTML =  barangay_name;
                 document.getElementById("barangay_name-2nd").innerHTML =  barangay_name;
                 document.getElementById("logo").src =  logo;
                 document.getElementById("logo-about").src =  logo;
+
+                document.getElementById("barangay_image_id").src =  barangay_image;
         </script>
 
      
