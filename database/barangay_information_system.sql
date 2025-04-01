@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2025 at 02:52 PM
+-- Generation Time: Apr 01, 2025 at 07:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,8 +48,9 @@ CREATE TABLE `admin_account` (
 --
 
 INSERT INTO `admin_account` (`user_id`, `user_type`, `firstname`, `middlename`, `lastname`, `email`, `username`, `password`, `date_created`, `admin_profile`, `gender`, `age`, `status`) VALUES
-(82, 'SECRETARY', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1),
-(84, 'OFFICER', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'admin', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1);
+(82, 'SECRETARY', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'JMalano0411', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1),
+(84, 'OFFICER', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'admin', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1),
+(85, 'ADMINISTRATOR', 'Niel', 'Acantilado', 'Alegiojo', 'niel@gmail.com', '', 'niel', '2025-04-01', '67eb676b73e1a.jpg', 'Male', 23, 1);
 
 -- --------------------------------------------------------
 
@@ -229,7 +230,7 @@ INSERT INTO `barangay_blotter` (`subject`, `cell_no`, `place`, `tanod`, `date`, 
 ('Sexual Harassment', '09182345679', 'Barangay V', 'Daniel Reyes', '2025-03-01', '08:00:00', 1, 822, 'Victoria Cruz', 25, '1818 Maple St, Barangay V', 'José Garcia', 'None', 'Unwanted advances made by a neighbor', 'Social'),
 ('Abandoned Vehicle', '09241234567', 'Barangay W', 'Sofia Garcia', '2025-02-28', '11:00:00', 1, 823, 'Roberto Lopez', 38, '1919 Oak St, Barangay W', 'Pedro Cruz', 'None', 'Car abandoned on the side of the road', 'Traffic'),
 ('Electric Line Issues', '09256789012', 'Barangay X', 'Ricardo Lopez', '2025-02-27', '02:00:00', 1, 824, 'Patricia Reyes', 31, '2020 Elm St, Barangay X', 'Javier Dizon', 'sadadasdsd', 'Flickering lights in the neighborhood', 'Environment'),
-('Trespassing', '09262345678', 'Barangay Y', 'Fernando Perez', '2025-02-26', '12:30:00', 1, 825, 'Angela Cruz JENMAR', 29, ' 2121 Pine St, Barangay Y', 'Raul Reyes', 'None', 'Individuals trespassing in private property', 'Crime');
+('Trespassing', '09262345678', 'Barangay Y', 'Fernando Perez', '2025-02-26', '12:30:00', 3, 825, 'Angela Cruz JENMAR', 29, ' 2121 Pine St, Barangay Y', 'Raul Reyes', 'None', 'Individuals trespassing in private property', 'Crime');
 
 -- --------------------------------------------------------
 
@@ -481,11 +482,10 @@ INSERT INTO `barangay_resident` (`id`, `firstname`, `middlename`, `lastname`, `h
 (47, 'ANTHONY', 'DELGADO', 'GUTIERREZ', 'BLK. 7 LOT. 15', 'ZAMBOANGA', '1988-12-09', 36, 'WIDOWED', 'MALE', 'YES', 'anthony.gutierrez@gmail.com', '9694911585', 'ENTREPRENEUR', 'FILIPINO', 'MABUHAY HOMES 2000'),
 (48, 'CHRISTINE', 'CASTRO', 'DE VERA', 'BLK. 10 LOT. 16', 'BAGUIO', '1997-12-20', 27, 'SINGLE', 'FEMALE', 'YES', 'christine.devera@gmail.com', '9694911585', 'SOCIAL WORKER', 'FILIPINO', 'CAMELLA ISLAND PARK'),
 (49, 'KENNETH', 'AGULAR', 'RAMOS', 'BLK. 8 LOT. 3', 'BATANGAS', '1985-03-03', 39, 'MARRIED', 'MALE', 'YES', 'kenneth.ramos@gmail.com', '9694911585', 'SOFTWARE ENGINEER', 'FILIPINO', 'MABUHAY HOMES 2000'),
-(50, 'LOUISE', 'MENDOZA', 'VILLANUEVA', 'BLK. 5 LOT. 22', 'QUEZON', '1992-02-10', 32, 'SINGLE', 'FEMALE', 'YES', 'louise.villanueva@gmail.com', '9694911585', 'PHARMACIST', 'FILIPINO', 'CAMELLA ISLAND PARK'),
+(50, 'LOUISE', 'MENDOZA', 'VILLANUEVA', 'BLK. 5 LOT. 22', 'QUEZON', '1992-02-10', 32, 'Single', 'Female', 'Active', 'louise.villanueva@gmail.com', '09694911585', 'PHARMACIST', 'FILIPINO', 'CAMELLA ISLAND PARK'),
 (51, 'RAYMOND', 'TAN', 'GO', 'BLK. 6 LOT. 14', 'ILOILO', '1990-05-29', 34, 'MARRIED', 'MALE', 'YES', 'raymond.go@gmail.con', '9694911585', 'BUSINESS OWNER', 'FILIPINO', 'MABUHAY HOMES 2000'),
-(52, 'FELICIA', 'UY', 'SY', 'BLK. 9 LOT. 19', 'CEBU', '1986-11-07', 38, 'SEPARATED', 'FEMALE', 'YES', 'felicia.sy@gmail.com', '9694911585', 'HR MANAGER', 'FILIPINO', 'CAMELLA ISLAND PARK'),
-(53, 'BENEDICT', 'CHUA', 'LIM', 'BLK. 12 LOT. 1', 'DAVAO', '1999-01-28', 25, 'SINGLE', 'MALE', 'YES', 'bryan.lim@gmail.com', '9694911585', 'MECHANICAL ENGINEER', 'FILIPINO', 'MABUHAY HOMES 2000'),
-(54, 'ROSARIO', 'MALABANAN', 'SANTIAGO', 'BLK. 19 LOT. 52', 'BULACAN', '1983-04-30', 42, 'MARRIED', 'FEMALE', 'YES', 'rosasantiago30@gmail.com', '9694911585', 'HOUSEWIFE', 'FILIPINO', 'CAMELLA ISLAND PARK');
+(53, 'BENEDICT', 'CHUA', 'LIM', 'BLK. 12 LOT. 1', 'DAVAO', '1999-01-28', 25, 'Seperated', 'Male', 'Inactive', 'bryan.lim@gmail.com', '09694911585', 'MECHANICAL ENGINEER', 'FILIPINO', 'MABUHAY HOMES 2000'),
+(54, 'ROSARIO', 'MALABANAN', 'SANTIAGO', 'BLK. 19 LOT. 52', 'BULACAN', '1983-04-30', 42, 'Married', 'Female', 'Active', 'rosasantiago30@gmail.com', '09694911585', 'HOUSEWIFE', 'FILIPINO', 'CAMELLA ISLAND PARK');
 
 -- --------------------------------------------------------
 
@@ -525,7 +525,35 @@ INSERT INTO `barangay_revenue` (`date_issue`, `expired_date`, `document_amount`,
 ('2025-03-29', '2026-03-29', 23, 'Ethan', 'Luke', 'Collins', 'Barangay Indigency', 113, 1117),
 ('2025-03-29', '2026-03-29', 12, 'Ethan', 'Luke', 'Collins', 'Barangay Clearance', 112, 1118),
 ('2025-03-29', '2026-03-29', 12, 'Ethan', 'Luke', 'Collins', 'Barangay Certificate', 112, 1119),
-('2025-03-29', '2026-03-29', 23, 'Ethan', 'Luke', 'Collins', 'Barangay Certificate', 112, 1120);
+('2025-03-29', '2026-03-29', 23, 'Ethan', 'Luke', 'Collins', 'Barangay Certificate', 112, 1120),
+('2025-03-30', '2026-03-30', 23, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1121),
+('2025-03-30', '2026-03-30', 23, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1122),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1123),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1124),
+('2025-03-30', '2026-03-30', 11, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1125),
+('2025-03-30', '2026-03-30', 11, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1126),
+('2025-03-30', '2026-03-30', 11, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1127),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1128),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1129),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1130),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1131),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1132),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1133),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1134),
+('2025-03-30', '2026-03-30', 12, 'Ethan', 'Luke', 'Collins', 'Barangay Indigency', 113, 1135),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1136),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1137),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1138),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1139),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1140),
+('2025-03-23', '2026-03-23', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1141),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1142),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1143),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1144),
+('2025-03-30', '2026-03-30', 12, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1145),
+('2025-03-30', '2026-03-30', 11, 'Ethan', 'Luke', 'Collins', 'Barangay Certificate', 112, 1146),
+('2025-03-30', '2026-03-30', 23, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1147),
+('2025-03-30', '2026-03-30', 23, 'BENEDICT', 'CHUA', 'LIM', 'Barangay ID', 107, 1148);
 
 -- --------------------------------------------------------
 
@@ -537,7 +565,7 @@ CREATE TABLE `user_account` (
   `firstname` varchar(200) NOT NULL,
   `middlename` varchar(200) NOT NULL,
   `lastname` varchar(200) NOT NULL,
-  `username` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `gender` varchar(200) NOT NULL,
   `age` int(11) NOT NULL,
@@ -554,111 +582,10 @@ CREATE TABLE `user_account` (
 -- Dumping data for table `user_account`
 --
 
-INSERT INTO `user_account` (`firstname`, `middlename`, `lastname`, `username`, `password`, `gender`, `age`, `birthday`, `date_registered`, `house_no`, `sitio_pook`, `contact_no`, `profile`, `user_id`) VALUES
-('BENEDICT', 'CHUA', 'LIM', 'user', 'User0411', 'Male', 23, '2025-03-16', '2025-03-16', 'BLK. 5 LOT. 22', 'kjhjkjk', '09232323232', 'images.png', 35),
-('John', 'Michael', 'Doe', 'johndoe', 'password123', 'Male', 25, '1999-03-10', '2025-03-01', '101', 'Barangay 1', '09171234567', 'user1_profile.jpg', 36),
-('Jane', 'Marie', 'Smith', 'janesmith', 'password456', 'Female', 28, '1997-06-15', '2025-03-02', '102', 'Barangay 2', '09182345678', 'user2_profile.jpg', 37),
-('Mark', 'David', 'Johnson', 'markjohnson', 'password789', 'Male', 30, '1994-05-20', '2025-03-03', '103', 'Barangay 3', '09213456789', 'user3_profile.jpg', 38),
-('Emily', 'Ann', 'Brown', 'emilybrown', 'password321', 'Female', 22, '2002-08-05', '2025-03-04', '104', 'Barangay 4', '09224567890', 'user4_profile.jpg', 39),
-('Chris', 'Lee', 'Williams', 'chriswilliams', 'password654', 'Male', 35, '1989-11-30', '2025-03-05', '105', 'Barangay 5', '09335678901', 'user5_profile.jpg', 40),
-('Sophia', 'Claire', 'Miller', 'sophiamiller', 'password987', 'Female', 27, '1997-12-10', '2025-03-06', '106', 'Barangay 6', '09146789012', 'user6_profile.jpg', 41),
-('David', 'John', 'Wilson', 'davidwilson', 'password112', 'Male', 40, '1984-01-22', '2025-03-07', '107', 'Barangay 7', '09346789023', 'user7_profile.jpg', 42),
-('Olivia', 'Grace', 'Taylor', 'oliviataylor', 'password223', 'Female', 24, '2000-04-14', '2025-03-08', '108', 'Barangay 8', '09157890134', 'user8_profile.jpg', 43),
-('Michael', 'Eli', 'Harris', 'michaelharris', 'password334', 'Male', 33, '1991-07-25', '2025-03-09', '109', 'Barangay 9', '09268901245', 'user9_profile.jpg', 44),
-('Charlotte', 'Marie', 'Anderson', 'charlotteanderson', 'password445', 'Female', 29, '1995-02-18', '2025-03-10', '110', 'Barangay 10', '09379012356', 'user10_profile.jpg', 45),
-('Lucas', 'Ryan', 'Martin', 'lucasmartin', 'password556', 'Male', 26, '1998-10-30', '2025-03-11', '111', 'Barangay 11', '09180123467', 'user11_profile.jpg', 46),
-('Amelia', 'Grace', 'Thompson', 'ameliathompson', 'password667', 'Female', 21, '2003-12-01', '2025-03-12', '112', 'Barangay 12', '09191234578', 'user12_profile.jpg', 47),
-('Benjamin', 'Joshua', 'Moore', 'benjaminmoore', 'password778', 'Male', 32, '1992-09-12', '2025-03-13', '113', 'Barangay 13', '09202345689', 'user13_profile.jpg', 48),
-('Harper', 'Leah', 'Jackson', 'harperjackson', 'password889', 'Female', 31, '1993-03-22', '2025-03-14', '114', 'Barangay 14', '09313456790', 'user14_profile.jpg', 49),
-('Ethan', 'Samuel', 'White', 'ethansamuel', 'password990', 'Male', 34, '1990-05-16', '2025-03-15', '115', 'Barangay 15', '09124567801', 'user15_profile.jpg', 50),
-('Isabella', 'Vera', 'Young', 'isabellayoung', 'password1234', 'Female', 25, '1999-11-10', '2025-03-16', '116', 'Barangay 16', '09235678912', 'user16_profile.jpg', 51),
-('Alexander', 'Victor', 'King', 'alexanderking', 'password2345', 'Male', 36, '1988-06-25', '2025-03-17', '117', 'Barangay 17', '09346789023', 'user17_profile.jpg', 52),
-('Chloe', 'Olivia', 'Scott', 'chloescott', 'password3456', 'Female', 23, '2001-02-10', '2025-03-18', '118', 'Barangay 18', '09157890134', 'user18_profile.jpg', 53),
-('Jack', 'Daniel', 'Green', 'jackgreen', 'password4567', 'Male', 29, '1995-01-15', '2025-03-19', '119', 'Barangay 19', '09268901245', 'user19_profile.jpg', 54),
-('Ella', 'Sophia', 'Adams', 'ellasophia', 'password5678', 'Female', 27, '1997-07-22', '2025-03-20', '120', 'Barangay 20', '09379012356', 'user20_profile.jpg', 55),
-('Henry', 'Robert', 'Baker', 'henrybaker', 'password6789', 'Male', 39, '1985-12-04', '2025-03-21', '121', 'Barangay 21', '09180123467', 'user21_profile.jpg', 56),
-('Avery', 'Joseph', 'Garcia', 'averygarcia', 'password7890', 'Female', 33, '1991-03-30', '2025-03-22', '122', 'Barangay 22', '09191234578', 'user22_profile.jpg', 57),
-('James', 'Edward', 'Martinez', 'jamesmartinez', 'password8901', 'Male', 41, '1983-09-18', '2025-03-23', '123', 'Barangay 23', '09202345689', 'user23_profile.jpg', 58),
-('Zoe', 'Elizabeth', 'Morris', 'zoemorris', 'password9012', 'Female', 24, '2000-08-08', '2025-03-24', '124', 'Barangay 24', '09313456790', 'user24_profile.jpg', 59),
-('Oliver', 'Matthew', 'Lee', 'oliverlee', 'password0123', 'Male', 31, '1993-07-21', '2025-03-25', '125', 'Barangay 25', '09124567801', 'user25_profile.jpg', 60),
-('Lily', 'Anna', 'Parker', 'lilyparker', 'password1235', 'Female', 28, '1996-04-11', '2025-03-26', '126', 'Barangay 26', '09235678912', 'user26_profile.jpg', 61),
-('William', 'Jacob', 'Evans', 'williamevans', 'password2346', 'Male', 27, '1997-05-30', '2025-03-27', '127', 'Barangay 27', '09346789023', 'user27_profile.jpg', 62),
-('Madeline', 'Faye', 'Nelson', 'madeline', 'password3457', 'Female', 30, '1994-06-20', '2025-03-28', '128', 'Barangay 28', '09157890134', 'user28_profile.jpg', 63),
-('Henry', 'Cole', 'Carter', 'henrycarter', 'password4568', 'Male', 29, '1995-04-12', '2025-03-29', '129', 'Barangay 29', '09268901245', 'user29_profile.jpg', 64),
-('Ella', 'Jane', 'Bennett', 'ellabennett', 'password5679', 'Female', 26, '1998-07-08', '2025-03-30', '130', 'Barangay 30', '09379012356', 'user30_profile.jpg', 65),
-('Theo', 'Mark', 'Perez', 'theoperez', 'password6780', 'Male', 31, '1993-11-05', '2025-03-31', '131', 'Barangay 31', '09180123467', 'user31_profile.jpg', 66),
-('Ruby', 'Grace', 'Davis', 'rubydavis', 'password7891', 'Female', 34, '1990-02-20', '2025-04-01', '132', 'Barangay 32', '09191234578', 'user32_profile.jpg', 67),
-('Mason', 'Joshua', 'Roberts', 'masonroberts', 'password8902', 'Male', 38, '1986-01-17', '2025-04-02', '133', 'Barangay 33', '09202345689', 'user33_profile.jpg', 68),
-('Amos', 'Luke', 'Gonzalez', 'amosgonzalez', 'password9013', 'Male', 29, '1995-09-14', '2025-04-03', '134', 'Barangay 34', '09313456790', 'user34_profile.jpg', 69),
-('Clara', 'Megan', 'Wright', 'clarawright', 'password0124', 'Female', 27, '1997-04-17', '2025-04-04', '135', 'Barangay 35', '09124567801', 'user35_profile.jpg', 70),
-('Isaac', 'Theo', 'Hernandez', 'isaachernandez', 'password1236', 'Male', 31, '1993-10-22', '2025-04-05', '136', 'Barangay 36', '09235678912', 'user36_profile.jpg', 71),
-('Olivia', 'Chloe', 'Martinez', 'oliviamartinez', 'password2347', 'Female', 26, '1998-08-25', '2025-04-06', '137', 'Barangay 37', '09346789023', 'user37_profile.jpg', 72),
-('Jackson', 'Nolan', 'Garcia', 'jacksongarcia', 'password3458', 'Male', 32, '1992-03-30', '2025-04-07', '138', 'Barangay 38', '09157890134', 'user38_profile.jpg', 73),
-('Ava', 'Eliza', 'Baker', 'avabaker', 'password4569', 'Female', 24, '2000-12-12', '2025-04-08', '139', 'Barangay 39', '09268901245', 'user39_profile.jpg', 74),
-('Zane', 'Mason', 'Jones', 'zanemason', 'password5670', 'Male', 33, '1991-04-20', '2025-04-09', '140', 'Barangay 40', '09379012356', 'user40_profile.jpg', 75),
-('Lily', 'Maddison', 'Roberts', 'lilyroberts', 'password6781', 'Female', 29, '1995-07-30', '2025-04-10', '141', 'Barangay 41', '09180123467', 'user41_profile.jpg', 76),
-('Jack', 'Wade', 'Miller', 'jackwade', 'password7892', 'Male', 32, '1992-01-19', '2025-04-11', '142', 'Barangay 42', '09191234578', 'user42_profile.jpg', 77),
-('Zoey', 'Clara', 'Scott', 'zoeyscott', 'password8903', 'Female', 28, '1996-09-05', '2025-04-12', '143', 'Barangay 43', '09202345689', 'user43_profile.jpg', 78),
-('Leo', 'Owen', 'Bennett', 'leobennett', 'password9014', 'Male', 36, '1988-05-12', '2025-04-13', '144', 'Barangay 44', '09313456790', 'user44_profile.jpg', 79),
-('Henry', 'Daniel', 'Baker', 'henrybaker', 'password0125', 'Male', 39, '1985-02-14', '2025-04-14', '145', 'Barangay 45', '09124567801', '67e353c369e18.png', 80),
-('Ethan', 'Luke', 'Collins', 'ethancollins', 'password1237', 'Male', 27, '1997-11-06', '2025-04-15', '146', 'Barangay 46', '09235678912', 'user46_profile.jpg', 81),
-('Sophia', 'Nicole', 'Evans', 'sophiaevans', 'password2348', 'Female', 25, '1999-10-18', '2025-04-16', '147', 'Barangay 47', '09346789023', 'user47_profile.jpg', 82),
-('Lucas', 'Nathan', 'Nelson', 'lucasnelson', 'password3459', 'Male', 31, '1993-02-12', '2025-04-17', '148', 'Barangay 48', '09157890134', 'user48_profile.jpg', 83),
-('Lily', 'Rose', 'Harris', 'lilyharris', 'password4560', 'Female', 29, '1995-06-03', '2025-04-18', '149', 'Barangay 49', '09268901245', 'user49_profile.jpg', 84),
-('Mason', 'Milleraa', 'Evans', 'masonmillerevans', 'Password5671', 'Male', 33, '1991-09-21', '2025-04-19', '150', 'Barangay 50', '09379012356', '67de7fb92949e.png', 85),
-('BENEDICT', 'CHUA', 'LIM', 'user', 'User0411', '1970-01-01', 23, '2025-03-16', '2025-03-16', 'BLK. 5 LOT. 22', 'kjhjkjk', '09232323232', 'images.png', 86),
-('John', 'Michael', 'Doe', 'johndoe', 'password123', '1970-01-01', 25, '1999-03-10', '2025-03-01', '101', 'Barangay 1', '09171234567', 'user1_profile.jpg', 87),
-('Jane', 'Marie', 'Smith', 'janesmith', 'password456', '1970-01-01', 28, '1997-06-15', '2025-03-02', '102', 'Barangay 2', '09182345678', 'user2_profile.jpg', 88),
-('Mark', 'David', 'Johnson', 'markjohnson', 'password789', '1970-01-01', 30, '1994-05-20', '2025-03-03', '103', 'Barangay 3', '09213456789', 'user3_profile.jpg', 89),
-('Emily', 'Ann', 'Brown', 'emilybrown', 'password321', '1970-01-01', 22, '2002-08-05', '2025-03-04', '104', 'Barangay 4', '09224567890', 'user4_profile.jpg', 90),
-('Chris', 'Lee', 'Williams', 'chriswilliams', 'password654', '1970-01-01', 35, '1989-11-30', '2025-03-05', '105', 'Barangay 5', '09335678901', 'user5_profile.jpg', 91),
-('Sophia', 'Claire', 'Miller', 'sophiamiller', 'password987', '1970-01-01', 27, '1997-12-10', '2025-03-06', '106', 'Barangay 6', '09146789012', 'user6_profile.jpg', 92),
-('David', 'John', 'Wilson', 'davidwilson', 'password112', '1970-01-01', 40, '1984-01-22', '2025-03-07', '107', 'Barangay 7', '09346789023', 'user7_profile.jpg', 93),
-('Olivia', 'Grace', 'Taylor', 'oliviataylor', 'password223', '1970-01-01', 24, '2000-04-14', '2025-03-08', '108', 'Barangay 8', '09157890134', 'user8_profile.jpg', 94),
-('Michael', 'Eli', 'Harris', 'michaelharris', 'password334', '1970-01-01', 33, '1991-07-25', '2025-03-09', '109', 'Barangay 9', '09268901245', 'user9_profile.jpg', 95),
-('Charlotte', 'Marie', 'Anderson', 'charlotteanderson', 'password445', '1970-01-01', 29, '1995-02-18', '2025-03-10', '110', 'Barangay 10', '09379012356', 'user10_profile.jpg', 96),
-('Lucas', 'Ryan', 'Martin', 'lucasmartin', 'password556', '1970-01-01', 26, '1998-10-30', '2025-03-11', '111', 'Barangay 11', '09180123467', 'user11_profile.jpg', 97),
-('Amelia', 'Grace', 'Thompson', 'ameliathompson', 'password667', '1970-01-01', 21, '2003-12-01', '2025-03-12', '112', 'Barangay 12', '09191234578', 'user12_profile.jpg', 98),
-('Benjamin', 'Joshua', 'Moore', 'benjaminmoore', 'password778', '1970-01-01', 32, '1992-09-12', '2025-03-13', '113', 'Barangay 13', '09202345689', 'user13_profile.jpg', 99),
-('Harper', 'Leah', 'Jackson', 'harperjackson', 'password889', '1970-01-01', 31, '1993-03-22', '2025-03-14', '114', 'Barangay 14', '09313456790', 'user14_profile.jpg', 100),
-('Ethan', 'Samuel', 'White', 'ethansamuel', 'password990', '1970-01-01', 34, '1990-05-16', '2025-03-15', '115', 'Barangay 15', '09124567801', 'user15_profile.jpg', 101),
-('Isabella', 'Vera', 'Young', 'isabellayoung', 'password1234', '1970-01-01', 25, '1999-11-10', '2025-03-16', '116', 'Barangay 16', '09235678912', 'user16_profile.jpg', 102),
-('Alexander', 'Victor', 'King', 'alexanderking', 'password2345', '1970-01-01', 36, '1988-06-25', '2025-03-17', '117', 'Barangay 17', '09346789023', 'user17_profile.jpg', 103),
-('Chloe', 'Olivia', 'Scott', 'chloescott', 'password3456', '1970-01-01', 23, '2001-02-10', '2025-03-18', '118', 'Barangay 18', '09157890134', 'user18_profile.jpg', 104),
-('Jack', 'Daniel', 'Green', 'jackgreen', 'password4567', '1970-01-01', 29, '1995-01-15', '2025-03-19', '119', 'Barangay 19', '09268901245', 'user19_profile.jpg', 105),
-('Ella', 'Sophia', 'Adams', 'ellasophia', 'password5678', '1970-01-01', 27, '1997-07-22', '2025-03-20', '120', 'Barangay 20', '09379012356', 'user20_profile.jpg', 106),
-('Henry', 'Robert', 'Baker', 'henrybaker', 'password6789', '1970-01-01', 39, '1985-12-04', '2025-03-21', '121', 'Barangay 21', '09180123467', 'user21_profile.jpg', 107),
-('Avery', 'Joseph', 'Garcia', 'averygarcia', 'password7890', '1970-01-01', 33, '1991-03-30', '2025-03-22', '122', 'Barangay 22', '09191234578', 'user22_profile.jpg', 108),
-('James', 'Edward', 'Martinez', 'jamesmartinez', 'password8901', '1970-01-01', 41, '1983-09-18', '2025-03-23', '123', 'Barangay 23', '09202345689', 'user23_profile.jpg', 109),
-('Zoe', 'Elizabeth', 'Morris', 'zoemorris', 'password9012', '1970-01-01', 24, '2000-08-08', '2025-03-24', '124', 'Barangay 24', '09313456790', 'user24_profile.jpg', 110),
-('Oliver', 'Matthew', 'Lee', 'oliverlee', 'password0123', '1970-01-01', 31, '1993-07-21', '2025-03-25', '125', 'Barangay 25', '09124567801', 'user25_profile.jpg', 111),
-('Lily', 'Anna', 'Parker', 'lilyparker', 'password1235', '1970-01-01', 28, '1996-04-11', '2025-03-26', '126', 'Barangay 26', '09235678912', 'user26_profile.jpg', 112),
-('William', 'Jacob', 'Evans', 'williamevans', 'password2346', '1970-01-01', 27, '1997-05-30', '2025-03-27', '127', 'Barangay 27', '09346789023', 'user27_profile.jpg', 113),
-('Madeline', 'Faye', 'Nelson', 'madeline', 'password3457', '1970-01-01', 30, '1994-06-20', '2025-03-28', '128', 'Barangay 28', '09157890134', 'user28_profile.jpg', 114),
-('Henry', 'Cole', 'Carter', 'henrycarter', 'password4568', '1970-01-01', 29, '1995-04-12', '2025-03-29', '129', 'Barangay 29', '09268901245', 'user29_profile.jpg', 115),
-('Ella', 'Jane', 'Bennett', 'ellabennett', 'password5679', '1970-01-01', 26, '1998-07-08', '2025-03-30', '130', 'Barangay 30', '09379012356', 'user30_profile.jpg', 116),
-('Theo', 'Mark', 'Perez', 'theoperez', 'password6780', '1970-01-01', 31, '1993-11-05', '2025-03-31', '131', 'Barangay 31', '09180123467', 'user31_profile.jpg', 117),
-('Ruby', 'Grace', 'Davis', 'rubydavis', 'password7891', '1970-01-01', 34, '1990-02-20', '2025-04-01', '132', 'Barangay 32', '09191234578', 'user32_profile.jpg', 118),
-('Mason', 'Joshua', 'Roberts', 'masonroberts', 'password8902', '1970-01-01', 38, '1986-01-17', '2025-04-02', '133', 'Barangay 33', '09202345689', 'user33_profile.jpg', 119),
-('Amos', 'Luke', 'Gonzalez', 'amosgonzalez', 'password9013', '1970-01-01', 29, '1995-09-14', '2025-04-03', '134', 'Barangay 34', '09313456790', 'user34_profile.jpg', 120),
-('Clara', 'Megan', 'Wright', 'clarawright', 'password0124', '1970-01-01', 27, '1997-04-17', '2025-04-04', '135', 'Barangay 35', '09124567801', 'user35_profile.jpg', 121),
-('Isaac', 'Theo', 'Hernandez', 'isaachernandez', 'password1236', '1970-01-01', 31, '1993-10-22', '2025-04-05', '136', 'Barangay 36', '09235678912', 'user36_profile.jpg', 122),
-('Olivia', 'Chloe', 'Martinez', 'oliviamartinez', 'password2347', '1970-01-01', 26, '1998-08-25', '2025-04-06', '137', 'Barangay 37', '09346789023', 'user37_profile.jpg', 123),
-('Jackson', 'Nolan', 'Garcia', 'jacksongarcia', 'password3458', '1970-01-01', 32, '1992-03-30', '2025-04-07', '138', 'Barangay 38', '09157890134', 'user38_profile.jpg', 124),
-('Ava', 'Eliza', 'Baker', 'avabaker', 'password4569', '1970-01-01', 24, '2000-12-12', '2025-04-08', '139', 'Barangay 39', '09268901245', 'user39_profile.jpg', 125),
-('Zane', 'Mason', 'Jones', 'zanemason', 'password5670', '1970-01-01', 33, '1991-04-20', '2025-04-09', '140', 'Barangay 40', '09379012356', 'user40_profile.jpg', 126),
-('Lily', 'Maddison', 'Roberts', 'lilyroberts', 'password6781', '1970-01-01', 29, '1995-07-30', '2025-04-10', '141', 'Barangay 41', '09180123467', 'user41_profile.jpg', 127),
-('Jack', 'Wade', 'Miller', 'jackwade', 'password7892', '1970-01-01', 32, '1992-01-19', '2025-04-11', '142', 'Barangay 42', '09191234578', 'user42_profile.jpg', 128),
-('Zoey', 'Clara', 'Scott', 'zoeyscott', 'password8903', '1970-01-01', 28, '1996-09-05', '2025-04-12', '143', 'Barangay 43', '09202345689', 'user43_profile.jpg', 129),
-('Leo', 'Owen', 'Bennett', 'leobennett', 'password9014', '1970-01-01', 36, '1988-05-12', '2025-04-13', '144', 'Barangay 44', '09313456790', 'user44_profile.jpg', 130),
-('Henry', 'Daniel', 'Baker', 'henrybaker', 'password0125', '1970-01-01', 39, '1985-02-14', '2025-04-14', '145', 'Barangay 45', '09124567801', 'user45_profile.jpg', 131),
-('Ethan', 'Luke', 'Collins', 'ethancollins', 'password1237', '1970-01-01', 27, '1997-11-06', '2025-04-15', '146', 'Barangay 46', '09235678912', 'user46_profile.jpg', 132),
-('Sophia', 'Nicole', 'Evans', 'sophiaevans', 'password2348', '1970-01-01', 25, '1999-10-18', '2025-04-16', '147', 'Barangay 47', '09346789023', 'user47_profile.jpg', 133),
-('Lucas', 'Nathan', 'Nelson', 'lucasnelson', 'password3459', '1970-01-01', 31, '1993-02-12', '2025-04-17', '148', 'Barangay 48', '09157890134', 'user48_profile.jpg', 134),
-('Lily', 'Rose', 'Harris', 'lilyharris', 'password4560', '1970-01-01', 29, '1995-06-03', '2025-04-18', '149', 'Barangay 49', '09268901245', 'user49_profile.jpg', 135),
-('Mason', 'Milleraa', 'Evans', 'masonmillerevans', 'Password5671', '1970-01-01', 33, '1991-09-21', '2025-04-19', '150', 'Barangay 50', '09379012356', '67de7fb92949e.png', 136),
-('BENEDICT', 'CHUA', 'LIM', 'Jenmar', '75626a8eb37e2207ea186fd7b3e8f6d2', 'Male', 22, '0000-00-00', '2025-03-28', '', '', '', 'images.png', 137),
-('BENEDICT', 'CHUA', 'LIM', 'RAYMOND', 'fe673cf26ae096e4a483c16ede8ade04', 'Male', 22, '2025-03-29', '2025-03-28', 'BLK. 5 LOT. 22', 'asdasdasd', '09694911585', 'images.png', 138);
+INSERT INTO `user_account` (`firstname`, `middlename`, `lastname`, `email`, `password`, `gender`, `age`, `birthday`, `date_registered`, `house_no`, `sitio_pook`, `contact_no`, `profile`, `user_id`) VALUES
+('ROSARIO', 'MALABANAN', 'SANTIAGO', 'tmc.jenmar.alano@cvsu.edu.ph', 'Jenmar0411', 'Male', 22, '0000-00-00', '2025-03-30', '', '', '', 'images.png', 142),
+('BENEDICT', 'CHUA', 'LIM', 'jenmaralano@gmail.com', 'JENMAR0411', 'Male', 22, '0000-00-00', '2025-03-30', '', '', '', 'images.png', 143),
+('RAYMOND', 'sdad', 'GO', 'admin@gmail.com', 'Admin0411', 'Male', 55, '0000-00-00', '2025-03-30', '', '', '', 'images.png', 144);
 
 --
 -- Indexes for dumped tables
@@ -726,7 +653,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `admin_account`
 --
 ALTER TABLE `admin_account`
-  MODIFY `user_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `user_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `barangay_blotter`
@@ -768,13 +695,13 @@ ALTER TABLE `barangay_resident`
 -- AUTO_INCREMENT for table `barangay_revenue`
 --
 ALTER TABLE `barangay_revenue`
-  MODIFY `OR_no` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1121;
+  MODIFY `OR_no` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1149;
 
 --
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
