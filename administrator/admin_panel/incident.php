@@ -245,7 +245,7 @@
 <script src="/BIS/administrator/admin_panel/incident_folder/update_modal.js"></script>
 
 <!-- View Modal Script -->
-<script src="/BIS/administrator/admin_panel/incident_folder/view.js"></script>|
+<script src="/BIS/administrator/admin_panel/incident_folder/view.js"></script>
 
 <script src="/BIS/administrator/admin_panel/incident_folder/import.js"></script>
 </html>

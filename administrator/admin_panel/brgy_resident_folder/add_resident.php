@@ -275,8 +275,8 @@
         <div class = "item-form5">
                 <label for="">Voter Status :</label><br>
                 <select name="voter-status" id="voter-status">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="Registered">Registered</option>
+                <option value="Not Registered">Not Registered</option>
                 </select><br>
                 <label for=""   >Citizenship :</label><br>
                 <input type="text" name = "citezenship" placeholder = "Enter Citezenship"><br>

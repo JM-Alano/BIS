@@ -275,8 +275,8 @@
                         <div>
                         <label for="">Voter Status :</label><br>
                         <select name="voter-status" id="voter-status">
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
+                        <option value="Registered">Registered</option>
+                        <option value="Not Registered">Not Registered</option>
                         </select>
                         </div>
                         <div>

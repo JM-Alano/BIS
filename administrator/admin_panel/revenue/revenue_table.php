@@ -176,7 +176,7 @@ if ($result->num_rows > 0) { ?>
         </tr>
         <?php } ?>
 
-        <tfoot style="background-color:rgba(4, 129, 12, 0.65); color:rgba(255, 251, 199, 0.75);">
+        <tfoot style="background-color:rgba(224, 226, 224, 0.94); color:rgba(8, 122, 4, 0.75);">
             <tr>
                 <td colspan="0" style="text-align: right;">Total Amount :</td>
                 <td></td>

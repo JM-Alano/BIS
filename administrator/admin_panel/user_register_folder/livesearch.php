@@ -18,7 +18,7 @@
                 $input = $_POST['input']; 
 
                 $query = "SELECT * FROM user_account WHERE user_id LIKE '{$input}%' OR firstname LIKE '{$input}%' OR middlename LIKE '{$input}%' OR lastname LIKE '{$input}%'
-                 OR age LIKE '{$input}%'  OR gender LIKE '{$input}%' OR username LIKE '{$input}%'";
+                 OR age LIKE '{$input}%'  OR gender LIKE '{$input}%' OR email LIKE '{$input}%'";
 
                 
                 $result = mysqli_query($conn,$query);
@@ -34,7 +34,7 @@
                         <th>Fullname</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        <th>Username</th>
+                        <th>Email</th>
                         <th>Date Registered</th>
                         <th>Action</th>
                     </tr>
@@ -50,7 +50,7 @@
                             $gender =$row["gender"];
                             $age =$row["age"];
 
-                            $username =$row["username"];
+                            $email =$row["email"];
                             $password=$row["password"];
                             $date_registered=$row["date_registered"]
                             ?>
@@ -62,7 +62,7 @@
                                     <td hidden><?php echo  $gender;?></td>
                                     <td hidden><?php echo  $age;?></td>
                                     
-                                    <td hidden><?php echo  $username;?></td>
+                                    <td hidden><?php echo  $email;?></td>
                                     <td hidden><?php echo  $password;?></td>
 
                                     <td><?php echo  $firstname . " " .$middlename ." " . $lastname;?></td>
