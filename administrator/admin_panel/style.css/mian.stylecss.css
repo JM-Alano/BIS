@@ -155,6 +155,7 @@ body{
 .logo_content .logo .logo_name{
     font-family: "main_text";
     font-weight: 600;
+    font-size: 0.8rem;
 }
 
 .sidebar #btn_menu svg{

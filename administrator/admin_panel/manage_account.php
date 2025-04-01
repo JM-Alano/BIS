@@ -22,16 +22,35 @@
       
     ?>
     <div class = "sidebar">
-        <div class = "logo_content">
-            <div class = "logo">
-            <img src="../../asset/image/logo/6736e31f2c7d1.png" alt=""  id = "logo" >
-                <div class = "logo_name">BIS</div>
-            </div>
+    <div class = "logo_content">
+                    <div class = "logo">
+                    <img src="../../asset/image/logo/6736e31f2c7d1.png" alt="" id = "logo">
+                        <div class = "logo_name">BARANGAY <p style = "color:#F5E402;" >
+                        
+                        <?php
+                                        
+                        // Barangay Info
+                        $sqls = "SELECT * FROM barangay_information";
+                        $result = mysqli_query($conn, $sqls);
+
+                        if (mysqli_num_rows($result) > 0){
+                            
+                        $row = mysqli_fetch_array($result);
+                        echo  $row['barangay_name'] ;
+
+                        }
+                        
+                         ?>
+                         </p>
+                
+        </div>
+        </div>
             <span id = "btn_menu">
             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" ;transform: ;msFilter:;><path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path></svg>
             </span>
-           
+           <hr><br>
         </div>
+
 
 
             <ul class = "nav_list">

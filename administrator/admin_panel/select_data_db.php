@@ -3,8 +3,8 @@
 require('../../database/conn_db.php');
 
 // Barangay Info
-$sql = "SELECT * FROM barangay_information";
-$result = mysqli_query($conn, $sql);
+$sqls = "SELECT * FROM barangay_information";
+$result = mysqli_query($conn, $sqls);
 
 if (mysqli_num_rows($result) > 0){
     
@@ -12,7 +12,7 @@ if (mysqli_num_rows($result) > 0){
   
     ?>
      <p hidden  id = "logo_get">../../asset/image/logo/<?php echo  $row['logo'] ?></p>
-     
+  
        
     <?php
 
