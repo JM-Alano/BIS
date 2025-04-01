@@ -34,6 +34,18 @@
             color:#FCFAEE;
             font-family:"sub_text";
         }
+        @media only screen and (min-width: 1441px) {
+            .table-footer{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 10px;
+            margin-left:0px;
+            background-color:#4A9D4f;
+            border-radius: 4px;
+            width: 110%;
+            }
+        }
     </style>
 </head>
 <body>
