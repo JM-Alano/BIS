@@ -23,7 +23,7 @@
     <div class = "logo_content">
                     <div class = "logo">
                     <img src="../../asset/image/logo/6736e31f2c7d1.png" alt="" id = "logo">
-                        <div class = "logo_name">BARANGAY <p style = "color:#F5E402;" >
+                        <div class = "logo_name">BARANGAY <span style = "color:#F5E402;" >
                         
                         <?php
                                         
@@ -39,7 +39,7 @@
                         }
                         
                          ?>
-                         </p>
+                         </span>
                 
         </div>
         </div>

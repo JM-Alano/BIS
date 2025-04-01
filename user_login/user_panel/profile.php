@@ -22,14 +22,18 @@
     ?>
     <div class = "sidebar">
         <div class = "logo_content">
-            <div class = "logo">
-            <img src="../../asset/image/logo/679b85db30f8c.png" alt="" id = "logo_user">
-                <div class = "logo_name">BIS</div>
-            </div>
+        <div class = "logo">
+                    <img src="../../asset/image/logo/6736e31f2c7d1.png" alt="" id = "logo_user">
+                        <div class = "logo_name">BARANGAY <span style = "color:#F5E402;" id = "baranagay_name_user">
+                     
+                         </span>
+                
+        </div>
+        </div>
             <span id = "btn_menu">
             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" ;transform: ;msFilter:;><path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path></svg>
             </span>
-           
+           <hr><br>
         </div>
 
 
@@ -236,6 +240,12 @@
 
                 let logo_get_user = document.getElementById("logo_get_user").textContent;
                 document.getElementById("logo_user").src =  logo_get_user;
+
+                
+                let baranagy_name_get_user = document.getElementById("baranagay_name_get_user").textContent;
+                document.getElementById("baranagay_name_user").innerHTML =  baranagy_name_get_user;
+
+
 
 
         </script>

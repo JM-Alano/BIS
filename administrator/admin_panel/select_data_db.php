@@ -12,7 +12,7 @@ if (mysqli_num_rows($result) > 0){
   
     ?>
      <p hidden  id = "logo_get">../../asset/image/logo/<?php echo  $row['logo'] ?></p>
-  
+     <p hidden  id = "baranagay_name_get_user"><?php echo  $row['barangay_name'] ?></p>
        
     <?php
 

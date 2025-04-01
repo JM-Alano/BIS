@@ -24,22 +24,9 @@
         <div class = "logo_content">
             <div class = "logo">
             <img src="../../asset/image/logo/6736e31f2c7d1.png" alt="" id = "logo">
-                <div class = "logo_name">BARANGAY <p style = "color:#F5E402;" >
+                <div class = "logo_name">BARANGAY <p style = "color:#F5E402;" id = "baranagay_name_user">
                 
-                <?php
-                                
-                // Barangay Info
-                $sqls = "SELECT * FROM barangay_information";
-                $result = mysqli_query($conn, $sqls);
-
-                if (mysqli_num_rows($result) > 0){
-                    
-                $row = mysqli_fetch_array($result);
-                echo  $row['barangay_name'] ;
-
-                }
-                
-                 ?>
+             
                 </p>
                 
         </div>
@@ -264,11 +251,10 @@
                 
                 let logo = document.getElementById("logo_get").textContent;
                 document.getElementById("logo").src =  logo;
-                
-                let barangay_name = document.getElementById("barangay_name_get").textContent;
-                document.getElementById("barangay_name") =  barangay_name;
+                let baranagy_name_get_user = document.getElementById("baranagay_name_get_user").textContent;
+                document.getElementById("baranagay_name_user").innerHTML =  baranagy_name_get_user;
 
-
+            
 
                 
 

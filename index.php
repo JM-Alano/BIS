@@ -41,7 +41,7 @@
            
             </div>
             <div class = "btn_e-barangay">
-                <a href="user_login/user_login_page.php"><button id="loginButton" class = "svg_login">LOGIN</button></a>
+                <a href="user_login/user_login_page.php"><button id="loginButton" class = "svg_login" style = "width:100px;">LOGIN</button></a>
             </div>
             
             <?php
@@ -61,14 +61,13 @@
 
                               const button_svg = document.querySelector('.iconContainer');
                               
-                              const svgIcon = `
-                                    <svg style = fill:#4A9D4f; xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
-                                `;
+                              
       
                               // Function to update button based on login status
                               function updateButton() {
                                   if (isLoggedIn) {
-                                    button.innerHTML = svgIcon;
+                                    button.innerHTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: green; border-radius: 50%; margin-right: 5px;"></span>${"ACTIVE"}`;
+
                                     
                                         // Add a style directly to the button
                                      
