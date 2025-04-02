@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/BIS/administrator/admin_panel/brgy_blotter/brgy_blotter.css"/>
+    <style>
+        .main_div_blotter input, select{
+            border:none;
+            color:#005720;
+        }
+    </style>
 </head>
 <body>
 

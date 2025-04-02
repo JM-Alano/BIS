@@ -43,7 +43,7 @@
       
        
     </div>
-    <h2>Account</h2>
+    <h2 style = "color:;">Account</h2>
     <div class = "item3">
        
         <div><label for="">Email</label><br>
