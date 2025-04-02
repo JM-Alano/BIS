@@ -287,6 +287,23 @@ caption {
 }
 
 
+#live_search{
+    float: right;
+     width: 20vw;
+    position: relative;
+    top: -40px;
+    right: 20px;
+     padding: 15px;
+     background-color: var(--bg-color);
+     border: #91ad9b67 2px solid;
+     border-radius: 4px;
+     color:var(--1st-text-color);
+     outline: none;
+     
+   }
+   #live_search:focus{
+    outline: 3px solid var(--2nd-bg-color);
+   }
 
 @media only screen and (min-width: 320px ){
    
