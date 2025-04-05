@@ -52,7 +52,7 @@
 <body>
 
 <!-- SEARCH BUTTON -->
-<input type="text" id="live_search" placeholder="SEARCH">
+<input type="text" id="live_search" placeholder="SEARCH" style = "margin-right:150px;">
 
 <!-- Month Filter Form -->
 <form method="GET" action="" class = "form">

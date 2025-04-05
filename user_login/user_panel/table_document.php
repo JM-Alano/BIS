@@ -17,6 +17,54 @@
             border-radius: 4px;
             color:#4A9D4f;
         }
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .pagination a {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #4A9D4f;
+            border-radius: 3px;
+        }
+        .pagination a.active {
+            background-color: #4A9D4f;
+            color: white;
+            border: 1px solid #4A9D4f;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .limit-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top:10px;
+        }
+        .limit-selector select {
+            padding: 5px;
+            border: 1px solid #4A9D4f;
+            border-radius: 4px;
+            margin-top:-50px;
+        }
+        .page-info {
+            font-size: 0.9em;
+            color: #555;
+            margin-left:40px;
+            margin-top:20px;
+        }
+        .ellipsis {
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +85,12 @@
     $countResult = $conn->query($countQuery);
     $totalRows = $countResult->fetch_assoc()['total'];
     $totalPages = max(1, ceil($totalRows / $limit));
+
+    // Adjust current page if it exceeds total pages
+    if ($page > $totalPages) {
+        $page = $totalPages;
+        $offset = ($page - 1) * $limit;
+    }
 
     // Get status counts
     $statusCounts = [
@@ -72,6 +126,23 @@
 
     if ($result->num_rows > 0) {
     ?>
+
+    <!-- Pagination Controls Top -->
+    <div class="pagination-controls">
+       
+        <div class="limit-selector">
+            <form method="get" action="">
+                <label for="limit">Items per page:</label>
+                <select name="limit" id="limit" onchange="this.form.submit()">
+                    <option value="5" <?php echo $limit == 5 ? 'selected' : ''; ?>>5</option>
+                    <option value="10" <?php echo $limit == 10 ? 'selected' : ''; ?>>10</option>
+                    <option value="20" <?php echo $limit == 20 ? 'selected' : ''; ?>>20</option>
+                    <option value="50" <?php echo $limit == 50 ? 'selected' : ''; ?>>50</option>
+                </select>
+                <input type="hidden" name="page" value="1">
+            </form>
+        </div>
+    </div>
 
     <table>
         <caption>Request Information</caption>
@@ -143,20 +214,39 @@
         </tfoot>
     </table>
 
-    <!-- Pagination Controls -->
+    <!-- Pagination Controls Bottom -->
     <div class="pagination">
         <?php if ($page > 1): ?>
+            <a href="?page=1&limit=<?php echo $limit; ?>">First</a>
             <a href="?page=<?php echo $page - 1; ?>&limit=<?php echo $limit; ?>">Previous</a>
         <?php endif; ?>
 
-        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+        <?php 
+        // Show page numbers with smart truncation
+        $maxVisiblePages = 5;
+        $startPage = max(1, $page - floor($maxVisiblePages / 2));
+        $endPage = min($totalPages, $startPage + $maxVisiblePages - 1);
+        
+        if ($startPage > 1) {
+            echo '<a href="?page=1&limit='.$limit.'">1</a>';
+            if ($startPage > 2) echo '<span class="ellipsis">...</span>';
+        }
+        
+        for ($i = $startPage; $i <= $endPage; $i++): ?>
             <a href="?page=<?php echo $i; ?>&limit=<?php echo $limit; ?>" class="<?php echo $i == $page ? 'active' : ''; ?>">
                 <?php echo $i; ?>
             </a>
-        <?php endfor; ?>
+        <?php endfor; 
+        
+        if ($endPage < $totalPages) {
+            if ($endPage < $totalPages - 1) echo '<span class="ellipsis">...</span>';
+            echo '<a href="?page='.$totalPages.'&limit='.$limit.'">'.$totalPages.'</a>';
+        }
+        ?>
 
         <?php if ($page < $totalPages): ?>
             <a href="?page=<?php echo $page + 1; ?>&limit=<?php echo $limit; ?>">Next</a>
+            <a href="?page=<?php echo $totalPages; ?>&limit=<?php echo $limit; ?>">Last</a>
         <?php endif; ?>
     </div>
 
@@ -182,6 +272,9 @@
     ?>
 
     <footer style="height:100px;">
+    <div class="page-info">
+            Showing <?php echo min($offset + 1, $totalRows) . " to " . min($offset + $limit, $totalRows) . " of " . $totalRows; ?> entries
+        </div>
     </footer>    
 </body>
 </html>

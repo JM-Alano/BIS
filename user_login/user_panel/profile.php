@@ -103,16 +103,16 @@
             <div class = "profile">
                 <h1>Profile</h1>
 
-                <div class = "img">
-                <img src="/BIS/asset/image/user_profile/images.png" alt="" id = "profile_user_display"><br>
-                <input type="file"  name = "image" accept = ".jpg, .jpeg, .png" id = "images">
-                </div>
+              
+                    <img src="/BIS/asset/image/user_profile/images.png" alt="" id = "profile_user_display" class = "img"><br>
+                   
+              
                 
             </div>
 
         <div class="container">
             <div class="label_div">
-                
+                 
                 <label for="">Firstname</label>
                 <label for="">Middlename</label>
                 <label for="">Lastname</label>
@@ -122,6 +122,7 @@
                 
             </div>
             <div class="input_div">
+            <input type="file"  name = "image" accept = ".jpg, .jpeg, .png" id = "images" style = "padding-top:10px;">
                 <input type="text" id = "firstname_my_profile_id" name = "firstname" value ="" required>
                 <input type="text" id = "middlename_my_profile_id" name = "middlename" value =""  required>
                 <input type="text" id = "lastname_my_profile_id"  name = "lastname" value ="" required>
@@ -146,7 +147,7 @@
         <div class="container">
             <div class="label_div">
                 
-                <label for="">Contact Phone</label>
+                <label for="" class = "label2">Contact Phone</label>
      
                 
             </div>
@@ -161,8 +162,8 @@
         <div class="container">
             <div class="label_div">
                 
-                <label for="">House no.</label>
-                <label for="">Sitio/Pook</label>
+                <label for="" class = "label2">House no.</label>
+                <label for="" class = "label2">Sitio/Pook</label>
                 
             </div>
             <div class="input_div">

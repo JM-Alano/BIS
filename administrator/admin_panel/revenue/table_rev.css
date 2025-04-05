@@ -239,17 +239,18 @@ caption {
         }
         #live_search{
           float: right;
-            width: 20vw;
-          position: relative;
-          right: 170px;
-           margin-bottom: 20px;
-            padding: 15px;
-            background-color: var(--bg-color);
-            border: #91ad9b67 2px solid;
-            border-radius: 4px;
-            color:var(--1st-text-color);
-            outline: none;
-            z-index: 99;
+          width: 20vw;
+         margin-right: 20px;
+    
+         margin-bottom: 20px;
+          padding: 15px;
+          background-color: var(--bg-color);
+          border: #91ad9b67 2px solid;
+          border-radius: 4px;
+          color:var(--1st-text-color);
+          outline: none;
+          z-index: -9;
+          
             
          }
          #live_search:focus{
@@ -285,7 +286,7 @@ caption {
   gap: 20px;
   margin-bottom: 20px;
   position: relative;
-  left: -90px;
+  left: -200px;
 }
 
 .form select, form label {

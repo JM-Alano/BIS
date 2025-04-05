@@ -93,8 +93,10 @@
                 <div class = "div_content">
                 
                 <button class = "add_button" id = "add_btn">+ ADD</button>
-               
-                <div style = "margin-bottom:200px;">
+                 <!-- SEARCH BUTTON -->
+                 <input type="text" id="live_search" placeholder="SEARCH" data-url="./livesearch.php">
+                           
+                <div style = "margin-bottom:200px;" id = "searchresult">
 
                     <?php 
                         require('table_document.php');
@@ -124,6 +126,32 @@
 <!-- -------------------------------------JAVASCRIPT--------------------------------------------- -->
              <!-- SIDEBAR FUNCTION SCRIPT -->
              <script src = "../javascript_folder/sidebar.js"></script>
+
+             <!-- AJAX SCRIPT FOR SEARCH BUTTON -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script type = "text/javascript" >
+                $(document).ready(function(){
+                $("#live_search").keyup(function(){
+                    var input = $(this).val();
+                    // alert(input);
+
+                    if(input != ""){
+                        $.ajax({
+                            url: "./livesearch.php",
+                            method: "POST",
+                            data: {input:input},
+
+                            success:function (data){
+                                $("#searchresult").html(data);
+                            }
+                        });
+                    }
+
+                });
+            });
+        </script>
+
         
         <script>
                 

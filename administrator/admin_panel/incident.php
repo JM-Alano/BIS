@@ -129,7 +129,7 @@
 
                 <div class = "search_div">
                             <!-- SEARCH BUTTON -->
-                            <input type="text" id="live_search" placeholder="All Search" data-url="./certificate_folder/livesearch_cert.php">
+                            <input type="text" id="live_search" placeholder="SEARCH" data-url="./certificate_folder/livesearch_cert.php">
                            
                         <button onclick="loadContent('incident_folder/add_blotter.php')" id = "add_list" class = "add_btn_manage">+Add</button>
                         <button id = "create_import" style = "background-color:rgb(0, 183, 255);">Import</button>
