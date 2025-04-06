@@ -60,13 +60,13 @@
     $input = $_POST['input']; 
     
     // Get total count of records
-    $countQuery = "SELECT COUNT(*) as total FROM barangay_request WHERE id LIKE '{$input}%'";
+    $countQuery = "SELECT COUNT(*) as total FROM barangay_request WHERE id ";
     $countResult = mysqli_query($conn, $countQuery);
     $totalRows = $countResult->fetch_assoc()['total'];
     $totalPages = ceil($totalRows / $limit);
     
     // Get paginated data
-    $query = "SELECT * FROM barangay_request WHERE id LIKE '{$input}%' LIMIT $limit OFFSET $offset";
+    $query = "SELECT * FROM barangay_request WHERE id LIKE '{$input}%' LIKE '{$input}%' OR firstname LIKE '{$input}%' OR lastname LIKE '{$input}%' OR request_document LIKE '{$input}%' LIMIT $limit OFFSET $offset";
     $result = mysqli_query($conn, $query);
 
     if ($result->num_rows > 0) {
