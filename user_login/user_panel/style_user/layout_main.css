@@ -208,7 +208,7 @@
     margin-left: -180px;
     width: 75vw;
     padding: 15px 15px 15px 15px;
-    background-color: #0da117;
+    background-color: #4A9C4E;
 }.dashboard_content .text .setting{
     display: flex;
     justify-content: right;
@@ -217,7 +217,7 @@
     align-items: center;
     font-size: 0.4rem;
     width: 100vw;
-    background-color: #0da117;
+    background-color: #4A9C4E;
 
 }
 .sidebar.active ~ .dashboard_content .text{
@@ -228,7 +228,7 @@
     font-family: "main_text";
     font-weight: 700;
     transition: all 0.5s ease;
-    background-color: #0da117;
+    background-color: #4A9C4E;
     padding: 15px 15px 15px 15px;
     margin-top: 3px;
     width: 100vw;
@@ -290,7 +290,7 @@
         margin-left: -180px;
         width: 80vw;
         padding: 15px 15px 15px 15px;
-        background-color: #0da117;
+        background-color: #4A9C4E;
     }.dashboard_content .text .setting{
         display: flex;
         justify-content: right;
@@ -299,7 +299,7 @@
         align-items: center;
         font-size: 0.4rem;
         width: 100vw;
-        background-color: #0da117;
+        background-color: #4A9C4E;
     
     }
     .sidebar.active ~ .dashboard_content .text{
@@ -367,7 +367,7 @@
         margin-left: -180px;
         width: 85vw;
         padding: 15px 15px 15px 15px;
-        background-color: #0da117;
+        background-color: #4A9C4E;
     }.dashboard_content .text .setting{
         display: flex;
         justify-content: right;
@@ -376,7 +376,7 @@
         align-items: center;
         font-size: 0.4rem;
         width: 100vw;
-        background-color: #0da117;
+        background-color: #4A9C4E;
     
     }
     .sidebar.active ~ .dashboard_content .text{
@@ -437,7 +437,7 @@
         margin-left: -180px;
         width: 90vw;
         padding: 15px 15px 15px 15px;
-        background-color: #0da117;
+        background-color: #4A9C4E;
     }.dashboard_content .text .setting{
         display: flex;
         justify-content: right;
@@ -752,7 +752,7 @@ body{
     font-family: "main_text";
     font-weight: 700;
     transition: all 0.5s ease;
-    background-color: #0da117;
+    background-color: #4A9C4E;
     padding: 20px 20px 20px 20px;
     margin-top: 3px;
     width: 92%;
@@ -1183,7 +1183,7 @@ body{
         font-family: "main_text";
         font-weight: 700;
         transition: all 0.5s ease;
-        background-color: #0da117;
+        background-color: #4A9C4E;
         padding: 20px 20px 20px 20px;
         margin-top: 3px;
         width: 100%;

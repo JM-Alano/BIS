@@ -65,6 +65,136 @@
         .ellipsis {
             padding: 5px 10px;
         }
+        @media only screen and (min-width: 320px ){
+            tfoot {
+            font-weight: bold;
+            background-color: #4A9D4f;
+            color:white;
+        }
+        .status-count {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            color:#4A9D4f;
+        }
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+          
+        }
+        
+        .pagination a {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #4A9D4f;
+            border-radius: 3px;
+        }
+        .pagination a.active {
+            background-color: #4A9D4f;
+            color: white;
+            border: 1px solid #4A9D4f;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .limit-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top:10px;
+        }
+        .limit-selector select {
+            padding: 5px;
+            border: 1px solid #4A9D4f;
+            border-radius: 4px;
+            margin-top:-50px;
+        }
+        .page-info {
+            font-size: 0.5em;
+            color: #555;
+            margin-left:-180px;
+            margin-top:20px;
+        }
+        .ellipsis {
+            padding: 5px 10px;
+        }
+        @media only screen and (min-width: 1080px ){
+            tfoot {
+            font-weight: bold;
+            background-color: #4A9D4f;
+            color:white;
+        }
+        .status-count {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            color:#4A9D4f;
+        }
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .pagination a {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #4A9D4f;
+            border-radius: 3px;
+        }
+        .pagination a.active {
+            background-color: #4A9D4f;
+            color: white;
+            border: 1px solid #4A9D4f;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .limit-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top:10px;
+        }
+        .limit-selector select {
+            padding: 5px;
+            border: 1px solid #4A9D4f;
+            border-radius: 4px;
+            margin-top:-50px;
+        }
+        .page-info {
+            font-size: 1em;
+            color: #555;
+            margin-left:60px;
+            margin-top:20px;
+            transition:all 0.5s ease ;
+        }
+        .ellipsis {
+            padding: 5px 10px;
+        }
+        .sidebar.active ~ .dashboard_content .page-info{
+                margin-left:-180px;
+        }
+        }
+        }
     </style>
 </head>
 <body>
@@ -143,7 +273,7 @@
             </form>
         </div>
     </div>
-
+<main class = "overflow">
     <table>
         <caption>Request Information</caption>
         <thead>
@@ -213,7 +343,7 @@
             </tr>
         </tfoot>
     </table>
-
+</main>
     <!-- Pagination Controls Bottom -->
     <div class="pagination">
         <?php if ($page > 1): ?>

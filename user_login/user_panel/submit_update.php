@@ -6,7 +6,7 @@
         $user_id = trim($_POST['user_id']);
         $id = trim($_POST['id']);
 
-        $business_name = trim($_POST['business_permit_Name']);
+        $business_name = trim($_POST['business_permit']);
         $firstname = trim($_POST['firstname']);
         $middlename = trim($_POST['middlename']);
         $lastname = trim($_POST['lastname']);

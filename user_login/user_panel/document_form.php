@@ -22,26 +22,32 @@
 
                 const input = document.createElement("input");
                 input.type = "text";
-                input.name = "business_permit_Name";
+                input.name = "business_permit";
                 input.placeholder = "Enter Business Permit Name";
                 input.id = "business_permit_details";
                 input.required = true;  // Make this input field required
                 
                 businessPermitInputContainer.appendChild(label);
                 businessPermitInputContainer.appendChild(input);
-            }else if (select.value !== "Business Permit" && document.getElementById("business_permit_details") === null) {
-        // Here, we set a default hidden input or any value that you want when not selecting "Business Permit"
-        const hiddenInput = document.createElement("input");
-        hiddenInput.type = "hidden";
-        hiddenInput.name = "business_permit_Name";
-        hiddenInput.value = "N/A";  // Default value for "Business Permit"
-        
-        // Append this hidden input to the form (so it gets submitted)
-        document.querySelector("form").appendChild(hiddenInput);
+            }
+        else if (select.value !== "Business Permit" && document.getElementById("business_permit_details") === null) {
+                const label = document.createElement("label");
+                label.setAttribute("for", "business_permit_details");
+               
+
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "business_permit";
+                input.placeholder = "Enter Business Permit Name";
+                input.id = "business_permit_details";
+                input.required = true;  // Make this input field required
+                input.value = "N/A";  // Make this input field required
+                
+                businessPermitInputContainer.appendChild(label);
+                businessPermitInputContainer.appendChild(input);
     }
         }
     </script>
-
 </head>
 <body>
 
@@ -187,6 +193,9 @@
                 let profile_user = document.getElementById("profile_profile").textContent;
                 document.getElementById("profile_user_display").value =  profile_user;
             </script>
+
+
+
        
 </body>
 </head>
