@@ -72,7 +72,7 @@
     <div id = "logo">
         
         <img src="../asset/image/logo/67a89c6822aa9.png" alt="" id = "img_logo" >
-        <h4 >Secure Access to Barangay Information System.</h4>
+        <h4 >Secure Access to Barangay Online Certificate Request.</h4>
     </div>
 
 
