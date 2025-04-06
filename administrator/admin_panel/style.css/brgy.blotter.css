@@ -353,7 +353,7 @@ table{
 }
 .sidebar.active ~ .dashboard_content .table_div table{
   width: 93vw;
-  margin-left: -180px;
+  margin-left: -210px;
 }
 table td{
 padding: 5px;
@@ -648,7 +648,9 @@ color: var(--1st-text-color);
 
 
 
-
+.sidebar.active ~ .dashboard_content .add_btn_manage{
+  margin-left: -200px;
+}
 
 
 

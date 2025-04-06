@@ -137,6 +137,16 @@ html {
         background-color: var(--2nd-bg-color);
         padding: 30px 30px 20px 30px;
     }
+    #main div h4{
+        display: none;
+        margin: -40px 0px 0px 160px;
+        font-family: "sub_text";
+        line-height: 30px;
+        text-align: justify;
+        width: 500px;
+        font-size: 1.3rem;
+        color: var(--1st-text-color);
+    }
     #main form input{
         width: 60vw;
         height: 15px;
@@ -454,6 +464,16 @@ html {
          font-size: 2rem;
          font-weight: 1000;
      }
+     #main div h4{
+        display: none;
+        margin: -40px 0px 0px 160px;
+        font-family: "sub_text";
+        line-height: 30px;
+        text-align: justify;
+        width: 500px;
+        font-size: 1.3rem;
+        color: var(--1st-text-color);
+    }
      #main form div{
         width: fit-content;
         background-color: var(--2nd-bg-color);
@@ -752,7 +772,7 @@ html {
     }
     .header img{
         margin-left: 80px;
-        width: 100px;
+        width: 90px;
     }
     #main{
         display: flex;
@@ -784,6 +804,16 @@ html {
         width: fit-content;
         background-color: var(--2nd-bg-color);
         padding: 30px 30px 20px 30px;
+    }
+    #main div h4{
+        display: none;
+        margin: -40px 0px 0px 160px;
+        font-family: "sub_text";
+        line-height: 30px;
+        text-align: justify;
+        width: 500px;
+        font-size: 1.3rem;
+        color: var(--1st-text-color);
     }
     #main form{
         width: fit-content;
@@ -1080,7 +1110,7 @@ html {
     }
     .header img{
         margin-left: 80px;
-        width: 100px;
+        width: 90px;
     }
     #main{
         display: flex;
@@ -1108,6 +1138,16 @@ html {
          font-size: 2rem;
          font-weight: 1000;
      }
+     #main div h4{
+        display: none;
+        margin: -40px 0px 0px 160px;
+        font-family: "sub_text";
+        line-height: 30px;
+        text-align: justify;
+        width: 500px;
+        font-size: 1.3rem;
+        color: var(--1st-text-color);
+    }
      #main form div{
         width: fit-content;
         background-color: var(--2nd-bg-color);
@@ -1409,7 +1449,7 @@ html {
     }
     .header img{
         margin-left: 100px;
-         width: 110px;
+         width: 90px;
     }
     #main{
         display: flex;
@@ -1441,6 +1481,16 @@ html {
         width: fit-content;
         background-color: var(--2nd-bg-color);
         padding: 30px 30px 20px 30px;
+    }
+    #main div h4{
+        display: block;
+        margin: -40px 0px 0px 160px;
+        font-family: "sub_text";
+        line-height: 30px;
+        text-align: justify;
+        width: 500px;
+        font-size: 1.3rem;
+        color: var(--1st-text-color);
     }
     #main form{
         width: fit-content;
@@ -1737,7 +1787,7 @@ html {
     }
     .header img{
         margin-left: 150px;
-         width: 110px;
+         width: 90px;
     }
     #main{
         display: flex;

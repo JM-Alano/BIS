@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2025 at 09:25 AM
+-- Generation Time: Apr 06, 2025 at 05:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,9 +48,9 @@ CREATE TABLE `admin_account` (
 --
 
 INSERT INTO `admin_account` (`user_id`, `user_type`, `firstname`, `middlename`, `lastname`, `email`, `username`, `password`, `date_created`, `admin_profile`, `gender`, `age`, `status`) VALUES
-(82, 'SECRETARY', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'JMalano0411', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1),
-(84, 'OFFICER', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'admin', '2025-03-22', '67dec8439c304.png', 'Female', 25, 1),
-(85, 'ADMINISTRATOR', 'Niel', 'Acantilado', 'Alegiojo', 'niel@gmail.com', '', 'niel', '2025-04-01', '67eb676b73e1a.jpg', 'Male', 23, 1);
+(82, 'SECRETARY', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'JMalano0411', '2025-03-22', '67ebcf473752d.png', 'Female', 25, 1),
+(84, 'OFFICER', 'Alex', 'Peralta', 'Peralta', 'tmc.jenmar.alano@cvsu.edu.ph', 'admin', 'admin', '2025-03-22', '67ebcf4e814e0.png', 'Female', 25, 1),
+(85, 'ADMINISTRATOR', 'Niel', 'Acantilado', 'Alegiojo', 'niel@gmail.com', '', 'niel', '2025-04-01', '67ebcf56041b1.png', 'Male', 23, 1);
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,7 @@ INSERT INTO `barangay_blotter` (`subject`, `cell_no`, `place`, `tanod`, `date`, 
 ('Bribery', '09890123456', 'Government Office', 'Ethan Walker', '2025-04-14', '17:00:00', 2, 26, 'Sophia Evans', 28, '234 Oak Rd', 'Chris Green', 'None', 'Offering a bribe to a public official', 'Crime'),
 ('Animal Cruelty', '09901234567', 'Farm', 'Marissa Cruz', '2025-04-14', '18:30:00', 1, 27, 'Olivia Lee', 37, '345 Cedar Dr', 'Eric White', 'None', 'Abusing animals on a farm', 'Animal'),
 ('Illegal Parking', '09123456789', 'Parking Lot', 'Jose Perez', '2025-04-15', '19:00:00', 2, 28, 'Benjamin Scott', 26, '567 Maple Blvd', 'Liam Hall', 'None', 'Parking in a disabled spot without permission', 'Traffic'),
-('Public Disturbance', '09234567890', 'Streets', 'Miguel Ortiz', '2025-04-15', '20:00:00', 1, 29, 'Daniel Thomas', 33, '678 Pine St', 'Olivia Clark', 'None', 'Causing noise disturbance in public area', 'Personal');
+('Public Disturbance', '09234567890', 'Streets', 'Miguel Ortiz', '2025-04-15', '20:00:00', 1, 29, 'Daniel Thomas', 33, ' 678 Pine St', 'Olivia Clark', 'None', 'Causing noise disturbance in public area', 'Personal');
 
 -- --------------------------------------------------------
 
@@ -191,15 +191,16 @@ CREATE TABLE `barangay_information` (
   `phone_no` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `id` int(11) NOT NULL,
-  `logo` varchar(200) NOT NULL
+  `logo` varchar(200) NOT NULL,
+  `barangay_image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `barangay_information`
 --
 
-INSERT INTO `barangay_information` (`barangay_name`, `municipality`, `address`, `phone_no`, `email`, `id`, `logo`) VALUES
-('PALIPARAN II', 'DASMARINAS', 'Paliparan II, Dasmariñas, Philippines', '09513856318', 'Barangay.paliparanII@gmail.com', 1, '67e4bee14e4a4.png');
+INSERT INTO `barangay_information` (`barangay_name`, `municipality`, `address`, `phone_no`, `email`, `id`, `logo`, `barangay_image`) VALUES
+('PALIPARAN II', 'DASMARINAS', 'Paliparan II, Dasmariñas, Philippines', '09513856318', 'Barangay.paliparanII@gmail.com', 1, '67eba79f220cf.png', '67eba7c534370.jpg');
 
 -- --------------------------------------------------------
 
@@ -223,14 +224,6 @@ CREATE TABLE `barangay_official` (
 --
 
 INSERT INTO `barangay_official` (`id`, `fullname`, `chairmanship`, `position`, `term_start`, `term_end`, `status`, `photo`) VALUES
-(118, 'PB. Rolando C. Ambal', 'Chairman', 'Chairman', '2025-03-23', '2025-03-23', 1, '67df822943786.jpg'),
-(119, 'Oscar Alvarez', 'Kagawad', 'Commnittee on Solid Waste', '2025-03-23', '2025-03-23', 1, '67df826ab91ee.jpg'),
-(120, 'Baby Andaya', 'Kagawad', 'Commnittee on Education', '2025-03-23', '2025-03-23', 1, '67df829e5ad16.jpg'),
-(121, 'Alvin Andaya', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df82c2f0ca7.jpg'),
-(122, 'Ressa Martinez', 'Kagawad', 'Commnittee on Rules', '2025-03-23', '2025-03-17', 1, '67df82e58e2ee.jpg'),
-(123, 'Mj Asilo', 'Kagawad', 'Commnittee on Peace & Order', '2025-03-23', '2025-03-23', 1, '67df83009722e.jpg'),
-(124, 'Gilbert Magtaas', 'Kagawad', 'Commnittee on Education', '2025-03-18', '2025-03-05', 1, '67df831c219fa.jpg'),
-(125, 'Tessa Sanchez', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df837d491bc.jpg'),
 (126, 'PB. Rolando C. Ambal', 'Chairman', 'Chairman', '2025-03-23', '2025-03-23', 1, '67df822943786.jpg'),
 (127, 'Oscar Alvarez', 'Kagawad', 'Commnittee on Solid Waste', '2025-03-23', '2025-03-23', 1, '67df826ab91ee.jpg'),
 (128, 'Baby Andaya', 'Kagawad', 'Commnittee on Education', '2025-03-23', '2025-03-23', 1, '67df829e5ad16.jpg'),
@@ -238,7 +231,15 @@ INSERT INTO `barangay_official` (`id`, `fullname`, `chairmanship`, `position`, `
 (130, 'Ressa Martinez', 'Kagawad', 'Commnittee on Rules', '2025-03-23', '2025-03-17', 1, '67df82e58e2ee.jpg'),
 (131, 'Mj Asilo', 'Kagawad', 'Commnittee on Peace & Order', '2025-03-23', '2025-03-23', 1, '67df83009722e.jpg'),
 (132, 'Gilbert Magtaas', 'Kagawad', 'Commnittee on Education', '2025-03-18', '2025-03-05', 1, '67df831c219fa.jpg'),
-(133, 'Tessa Sanchez', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df837d491bc.jpg');
+(133, 'Tessa Sanchez', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df837d491bc.jpg'),
+(134, 'PB. Rolando C. Ambal', 'Chairman', 'Chairman', '2025-03-23', '2025-03-23', 1, '67df822943786.jpg'),
+(135, 'Oscar Alvarez', 'Kagawad', 'Commnittee on Solid Waste', '2025-03-23', '2025-03-23', 1, '67df826ab91ee.jpg'),
+(136, 'Baby Andaya', 'Kagawad', 'Commnittee on Education', '2025-03-23', '2025-03-23', 1, '67df829e5ad16.jpg'),
+(137, 'Alvin Andaya', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df82c2f0ca7.jpg'),
+(138, 'Ressa Martinez', 'Kagawad', 'Commnittee on Rules', '2025-03-23', '2025-03-17', 1, '67df82e58e2ee.jpg'),
+(139, 'Mj Asilo', 'Kagawad', 'Commnittee on Peace & Order', '2025-03-23', '2025-03-23', 1, '67df83009722e.jpg'),
+(140, 'Gilbert Magtaas', 'Kagawad', 'Commnittee on Education', '2025-03-18', '2025-03-05', 1, '67df831c219fa.jpg'),
+(141, 'Tessa Sanchez', 'Kagawad', 'Commnittee on Appropriation', '2025-03-23', '2025-03-23', 1, '67df837d491bc.jpg');
 
 -- --------------------------------------------------------
 
@@ -275,7 +276,9 @@ CREATE TABLE `barangay_request` (
 --
 
 INSERT INTO `barangay_request` (`firstname`, `middlename`, `lastname`, `age`, `request_document`, `house_number`, `sitio_pook`, `birthday`, `place_of_birth`, `contact_no`, `contact_person`, `contact_no_contact_person`, `live_since_year`, `purpose`, `status`, `gender`, `date_request`, `business_name`, `profile`, `user_id`, `id`) VALUES
-('Addison', 'Faith', 'Phillips', 29, 'Barangay Certificate', '4747', 'Purok 5', '1994-08-11', 'BULACAN', '09123456828', 'asdsadasds', '09232323232', '2025-04', 'adasdsd', 1, 'Male', '2025-04-01', 'N/A', '67eb944fab301.jpg', 50, 2);
+('Addison', 'Faith', 'Phillips', 29, 'Barangay Certificate', '4747', 'Purok 5', '1994-08-11', 'BULACAN', '09123456828', 'asdsadasds', '09232323232', '2025-04', 'adasdsd', 1, 'Male', '2025-04-01', 'N/A', '67ebcf6874a84.png', 50, 2),
+('Addison', 'Faith', 'Phillips', 29, 'Barangay Clearance', '4747', 'Purok 5', '1994-08-11', 'BULACAN', '09123456828', 'asdsadasds', '09232323232', '2025-04', 'adasdsd', 1, 'Female', '2025-04-01', 'N/A', '67ebcf9a6ec4c.jpg', 50, 3),
+('Addison', 'Faith', 'Phillips', 29, 'Business Permit', '4747', 'Purok 5', '1994-08-11', 'BULACAN', '09123456828', 'asdsadasds', '09232323232', '2025-04', 'adasdsd', 3, 'Female', '2025-04-02', 'JOLIBEE', '67ebcf9a6ec4c.jpg', 50, 4);
 
 -- --------------------------------------------------------
 
@@ -381,7 +384,8 @@ CREATE TABLE `barangay_revenue` (
 --
 
 INSERT INTO `barangay_revenue` (`date_issue`, `expired_date`, `document_amount`, `firstname`, `middlename`, `lastname`, `document_type`, `user_id`, `OR_no`) VALUES
-('2025-04-01', '2026-04-01', 23, 'Addison', 'Faith', 'Phillips', 'Barangay Certificate', 2, 1);
+('2025-04-01', '2026-04-01', 23, 'Addison', 'Faith', 'Phillips', 'Barangay Certificate', 2, 1),
+('2025-04-02', '2026-04-02', 500, 'Addison', 'Faith', 'Phillips', 'Business Permit', 4, 2);
 
 -- --------------------------------------------------------
 
@@ -460,7 +464,7 @@ INSERT INTO `user_account` (`firstname`, `middlename`, `lastname`, `email`, `pas
 ('Wyatt', 'Thomas', 'Mitchell', 'wyatt.m@email.com', 'wyattpass', 'Male', 28, '1995-09-14', '2022-05-10', '4444', 'Purok 2', '09123456825', 'wyatt_profile.jpg', 47),
 ('Hannah', 'Joyce', 'Carter', 'hannah.c@email.com', 'hannahpass', 'Female', 26, '1997-05-07', '2022-05-12', '4545', 'Purok 3', '09123456826', 'hannah_profile.jpg', 48),
 ('Owen', 'Joseph', 'Roberts', 'owen.r@email.com', 'owenpass', 'Male', 35, '1988-12-30', '2022-05-15', '4646', 'Purok 4', '09123456827', 'owen_profile.jpg', 49),
-('Addison', 'Faith', 'Phillips', 'addison.p@email.com', 'addisonpass', 'Female', 29, '1994-08-11', '2022-05-18', '4747', 'Purok 5', '09123456828', '67eb944fab301.jpg', 50);
+('Addison', 'Faith', 'Phillips', 'addison.p@email.com', 'JENMAR0411', 'Female', 29, '1994-08-11', '2022-05-18', '4747', 'Purok 5', '09123456828', '67ebcf9a6ec4c.jpg', 50);
 
 --
 -- Indexes for dumped tables
@@ -552,13 +556,13 @@ ALTER TABLE `barangay_information`
 -- AUTO_INCREMENT for table `barangay_official`
 --
 ALTER TABLE `barangay_official`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT for table `barangay_request`
 --
 ALTER TABLE `barangay_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `barangay_resident`
@@ -570,7 +574,7 @@ ALTER TABLE `barangay_resident`
 -- AUTO_INCREMENT for table `barangay_revenue`
 --
 ALTER TABLE `barangay_revenue`
-  MODIFY `OR_no` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `OR_no` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_account`

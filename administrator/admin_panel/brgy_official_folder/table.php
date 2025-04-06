@@ -24,7 +24,11 @@
             border-radius: 4px;
             width: 93%;
         }
-        .total-count {
+        .sidebar.active ~ .dashboard_content .table-footer{
+            width: 92vw;
+            margin-left:-180px;
+        }
+            .total-count {
             font-weight: 400;
             color:#FCFAEE;
             font-family:"sub_text";

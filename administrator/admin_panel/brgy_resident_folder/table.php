@@ -23,6 +23,10 @@
             border-radius: 4px;
             width: 93%;
         }
+        .sidebar.active ~ .dashboard_content .table-footer{
+            width: 92vw;
+            margin-left:-180px;
+        }
         .total-count {
             font-weight: 400;
             color:#FCFAEE;

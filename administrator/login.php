@@ -8,6 +8,7 @@
 
      <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
     <link rel = "stylesheet" href = "login.admin.css"/>
+
 </head>
 <body>
 
@@ -78,8 +79,10 @@
         </div>
 
         <div>
-            <h4 style = "padding-left :60px;">Secure Access to Barangay Information System.</h4>
+            
             <img src="../asset/image/background/admin_bg/image-removebg-preview 1.png" alt="">
+            <h4 style = "padding-left :60px;">All records should be stored in a 
+            secure and confidential.</h4>
         </div>
 
     </main>

@@ -432,22 +432,6 @@
   
   /*--------------------SEARCH BUTTON ---------------------  */
   
-  #live_search{
-   float: right;
-    width: 20vw;
-    margin-right: -25px;
-    margin-top: 30px;
-    padding: 15px;
-    background-color: var(--bg-color);
-    border: #91ad9b67 2px solid;
-    border-radius: 4px;
-    color:var(--1st-text-color);
-    outline: none;
-    
-  }
-  #live_search:focus{
-   outline: 3px solid var(--2nd-bg-color);
-  }
 
   @font-face {
     font-family: "main_text";

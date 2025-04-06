@@ -23,6 +23,11 @@
             background-color:#4A9D4f;
             border-radius: 4px;
             width: 93%;
+            transition: all 0.5s ease;
+        }
+        .sidebar.active ~ .dashboard_content .table-footer{
+            width: 92vw;
+            margin-left:-180px;
         }
         .total-count {
             font-weight: 400;
@@ -52,7 +57,7 @@
 <body>
 
 <!-- SEARCH BUTTON -->
-<input type="text" id="live_search" placeholder="SEARCH" style = "margin-right:150px;">
+<input type="text" id="live_search" placeholder="SEARCH" >
 
 <!-- Month Filter Form -->
 <form method="GET" action="" class = "form">

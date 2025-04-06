@@ -42,7 +42,7 @@
       
        
     </div>
-    <h2>Account</h2>
+    <h2>Account Information</h2>
     <div class = "item3">
        
         <div><label for="">Email</label><br>
