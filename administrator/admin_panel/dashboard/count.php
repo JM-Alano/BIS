@@ -8,6 +8,7 @@ function population_total() {
    echo number_format($count);
  }
 
+
  function completed_total() {
     require("../../database/conn_db.php");
     $result = $conn->query("SELECT * FROM barangay_request WHERE status=4");

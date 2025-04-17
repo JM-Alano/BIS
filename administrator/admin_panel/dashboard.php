@@ -12,7 +12,41 @@
     <link rel = "stylesheet" href = "style.css/reposive_main.css"/>
     <link rel="icon" href="/BIS/favicon/favicon.ico" type="image/x-icon">
 
+    <!-- ... your existing head content ... -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <style>
+        @font-face {
+    font-family: "main_text";
+        src: url(../asset/font/Syncopate/Syncopate-Bold.ttf);
+    }
+    @font-face {
+        font-family: "sub_text";
+        src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt\,wght.ttf);
+    }
+    /* Container styling */
+    .chart-container {
+      width: 100%;
+      max-width:65vw;
+      margin: 40px auto;
+      padding: 20px;
+      background:#EBEBEB;
+      border-radius: 10px;
+      box-shadow: 1px 1px 20px rgba(165, 165, 165, 0.46);
+      color:#4B9D4E;
+    }
+
+    /* Canvas styling (optional) */
+    #myChart {
+        background:#EBEBEB;
+      border-radius: 8px;
+    }
+    .h2{
+        font-family:"sub_text";
+        color:#4B9D4E;
+    }
+  
+  </style>
 </head>
 <body>
     <?php
@@ -97,6 +131,7 @@
          
 
         </div>
+        
 
         <div class = "dashboard_content">
                 <div class = "text">
@@ -134,9 +169,18 @@
                             $date_today = date("F d, Y / l");
                             echo  $date_today;
                         ?></p>
+                        
                 </div>
 
-
+          
+              
+                    
+                    <!-- Add this new section for the chart -->
+                    <div class="chart-container">
+                     <h2 class = "h2">Document Request Statistics</h1>
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                    </div>
+                
                 <div id = "div_content">
                             <?php include("dashboard/count.php"); ?>
                             <div class="item1">
@@ -223,6 +267,68 @@
             
            
         </div>
+  
+
+
+
+
+
+  <script>
+    
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Total', 'Completed', 'Pending' , 'Male', 'Female', 'Prepare Not'],
+        datasets: [{
+          label: 'Votes',
+          data: [<?php population_total()?>, <?php completed_total()?>, <?php pending_total()?> ,<?php document_male_total()?>, <?php document_female_total()?>, <?php document_prefer_total()?>,<?php completed_total()?>],
+          backgroundColor: ['#4CC250', '#58A7C7', '#EEA41D'],
+          borderColor: ['#4CC250', '#58A7C7', '#EEA41D'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 14
+              },
+              color: '#333'
+            }
+          },
+          title: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#666',
+              font: {
+                size: 12
+              }
+            }
+          },
+          x: {
+            ticks: {
+              color: '#666',
+              font: {
+                size: 12
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+
+
 
      
 <!-- -------------------------------------JAVASCRIPT--------------------------------------------- -->
@@ -268,5 +374,8 @@
                 document.getElementById("admin_profile").src =  admin_profile;
 
         </script>
+
+
+
 </body>
 </html>

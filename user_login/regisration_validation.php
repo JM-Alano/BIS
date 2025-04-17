@@ -44,7 +44,7 @@
             if ($row['count'] > 0) {
 
                   
-            $checkQuerys = "SELECT COUNT(*) AS c FROM  user_account WHERE email = '$email' ";
+            $checkQuerys = "SELECT COUNT(*) AS c FROM  user_account WHERE  (firstname = '$firstname' AND lastname = '$lastname') OR email = '$email'";
             $results = mysqli_query($conn, $checkQuerys);
             $row = mysqli_fetch_assoc($results);
 
@@ -63,12 +63,14 @@
                         echo "Error: " . mysqli_error($conn);
                     }
             }else{
-                echo "<script>alert('Email already Exists.');
+
+                echo "<script>alert('Name OR Email already Exists.');
                 window.location.href = '/BIS/user_login/user_login_page.php';
                  </script>";
+                 
             }
 
-
+           
 
                 
             }else{

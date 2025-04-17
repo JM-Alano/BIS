@@ -322,29 +322,12 @@ caption {
    }
 
 @media only screen and (min-width: 320px ){
+  
   .overflow{
     overflow-x: scroll;
     margin-left: -180px;
     padding: 0px;
 
-  }
-  .overflow{
-    overflow-x: hidden;
-    margin-left: 40px;
-    padding: 0px;
- 
-  width: 78vw;
-  transition: all 0.5s ease;
-  }
-
-  .sidebar.active ~ .dashboard_content .overflow {
-    width: 100vw;
-    overflow-x: auto;
-    margin-left: -180px;
-  }
-  .sidebar.active ~ .dashboard_content .overflow table{
-   width: 94%;
-   margin-left: 0px;
   }
   table{
     border: 2px solid rgba(228, 228, 228, 0.39);

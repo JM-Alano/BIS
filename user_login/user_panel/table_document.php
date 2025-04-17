@@ -289,6 +289,7 @@
         <tbody>
             <?php
             while ($row = $result->fetch_assoc()) {
+                $control_no = $row['control_no'];
                 $id = $row['id'];
                 $firstname = $row["firstname"];
                 $middlename = $row["middlename"];
@@ -303,7 +304,7 @@
                 <td><?php echo $document_type; ?></td>
                 <td><?php echo $purpose; ?></td>
                 <td><?php echo $date_requested; ?></td>
-                <td><?php echo $id; ?></td>
+                <td><?php echo $control_no; ?></td>
                 <td>
                     <?php
                     if ($status == 0) {

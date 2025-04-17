@@ -42,6 +42,7 @@
                         </tr>
                         <?php
                              while($row = $result->fetch_assoc()) {
+                                $control_no = $row['control_no'];
                                 $id = $row['id'];
                                 $user_id = $row['user_id'];
                                 $firstname = $row["firstname"];
@@ -77,7 +78,7 @@
                                  <td class = "img"><img src="/BIS/asset/image/user_profile/<?php echo $profile; ?>" alt="" width = 500/></td>
                                     <td><?php echo $firstname ." ". $middlename ." ". $lastname; ?></td>
                                     <td><?php echo $gender; ?></td>
-                                    <td><?php echo $id; ?></td>
+                                    <td><?php echo $control_no; ?></td>
                                     <td><?php echo $purpose; ?></td>
                                     
                                     <td><?php echo  date('m/d/Y',strtotime($date_request));?></td>

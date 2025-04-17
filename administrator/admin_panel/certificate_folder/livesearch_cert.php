@@ -17,7 +17,7 @@
                
                 $input = $_POST['input']; 
 
-                $query = "SELECT * FROM barangay_request WHERE firstname LIKE '{$input}%' OR middlename LIKE '{$input}%' OR lastname LIKE '{$input}%' OR id LIKE '{$input}%' OR purpose LIKE '{$input}%' ";
+                $query = "SELECT * FROM barangay_request WHERE control_no LIKE '{$input}%' OR firstname LIKE '{$input}%' OR middlename LIKE '{$input}%' OR lastname LIKE '{$input}%' OR  purpose LIKE '{$input}%' ";
 
                 
                 $result = mysqli_query($conn,$query);
@@ -43,6 +43,7 @@
                         </tr>
                         <?php
                              while($row = $result->fetch_assoc()) {
+                                $control_no = $row['control_no'];
                                 $id = $row['id'];
                                 $user_id = $row['user_id'];
                                 $firstname = $row["firstname"];
@@ -78,7 +79,7 @@
                                  <td class = "img"><img src="/BIS/asset/image/user_profile/<?php echo $profile; ?>" alt="" width = 500/></td>
                                     <td><?php echo $firstname ." ". $middlename ." ". $lastname; ?></td>
                                     <td><?php echo $gender; ?></td>
-                                    <td><?php echo $id; ?></td>
+                                    <td><?php echo $control_no; ?></td>
                                     <td><?php echo $purpose; ?></td>
                                     <td> <?php echo $request_document ?></td>
                                     <td><?php echo  date('m/d/Y',strtotime($date_request));?></td>
