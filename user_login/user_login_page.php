@@ -53,7 +53,7 @@
     <input type="Password" id = "pwd" name = "pname" placeholder = "Password"><br>
 
 
-    <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><span style = "margin-left:50px; font-size:0.9rem; "> <a href="forgot_password.php" style = "color:rgba(246, 247, 248, 0.8);">Forgot Password</a> </span><br>
+    <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><span style = "margin-left:50px; font-size:0.9rem; "> <a href="forgot_password.php" class = "forgot_pass">Forgot Password</a> </span><br>
 
     <input type="submit" id = "submit" name = "user_login" value = "LOGIN"> 
     </div>
