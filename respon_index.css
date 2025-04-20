@@ -109,7 +109,7 @@ html {
         width: 100%;
         display: block;
         text-align: start;
-        
+        font-family: "main_text";
         padding-left: 10px;
        
     }
@@ -119,6 +119,7 @@ html {
         color: var(--other-color);
         width: max-content;
         text-align: center;
+        letter-spacing: -1px;
       
         
     }
@@ -645,13 +646,13 @@ html {
     .nav .headings{
         text-align: center;
         line-height: 10px;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         left: 0%;
         position: relative;
         width: 100%;
         display: block;
         text-align: start;
-        
+        font-family: "main_text";
         padding-left: 20px;
        
     }
@@ -1201,13 +1202,13 @@ html {
     .nav .headings{
         text-align: center;
         line-height: 10px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         left: 0%;
         position: relative;
         width: 100%;
         display: block;
         text-align: start;
-        
+        font-family: "main_text";
         padding-left: 20px;
        
     }
@@ -1749,14 +1750,15 @@ html {
     .nav .headings{
         text-align: center;
         line-height: 10px;
-        font-size: 1rem;
+        font-size: 0.9rem;
         left: 0%;
         position: relative;
         width: 100%;
         display: block;
         text-align: start;
-     
+        font-family: "main_text";
         padding-left: 20px;
+        font-weight: 600;
        
     }
     .nav .headings h1{
@@ -2292,14 +2294,14 @@ html {
     .nav .headings{
         text-align: center;
         line-height: 10px;
-        font-size: 1rem;
         left: 0%;
         position: relative;
         width: 100%;
         display: block;
         text-align: start;
-     
+         font-size: 0.9rem;
         padding-left: 20px;
+        font-family: "main_text";
        
     }
     .nav .headings h1{
@@ -2308,6 +2310,7 @@ html {
         color: var(--other-color);
         width: max-content;
         text-align: center;
+        font-weight: 600;
       
         
     }
