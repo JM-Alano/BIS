@@ -33,7 +33,7 @@
                 </div><hr><br>
 
                 <div>
-                    <input type="submit" id = "submit" name = "update_pass"value = "Save Cahanges">
+                    <input type="submit" id = "submit" name = "update_pass"value = "Save Changes">
                 </div>
 
     </form>
