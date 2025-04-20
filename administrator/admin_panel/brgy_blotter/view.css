@@ -44,7 +44,7 @@ body{
 }
 form{
     
-    padding: 50px;
+    padding: 0px;
 }
 form .main_div_blotter{
     display: flex;

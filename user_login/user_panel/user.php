@@ -203,24 +203,24 @@
                                         <h2>Status :</h2>
                                         <h2>
                                         <?php
-                                            $satus_document =  $row['status'] ;
+                                            $satus_document =  trim($row['status'] );
 
-                                            if ($satus_document == 0){
+                                            if ($satus_document === "No data"){
                                                 echo "<h2 style = 'color:#00572060;'>No data</h2>";
                                             }
-                                            else if ($satus_document == 1){
+                                            else if ($satus_document === "Pending"){
                                                 echo "<h2 style = 'color:red;'>Pending</h2>";
                                             }
-                                            else if ($satus_document == 2){
+                                            else if ($satus_document === "Processing"){
                                                 echo "<h2 style = 'color:orange;'>Processing</h2>";
                                             }
-                                            else if ($satus_document == 3){
+                                            else if ($satus_document == "Ready to Pick-up"){
                                                 echo "<h2 style = 'color:blue;'>Ready to Pick-up</h2>";
                                             }
-                                            else if ($satus_document == 4){
+                                            else if ($satus_document  === "Released"){
                                                 echo "<h2 style = 'color:#00cc0e;'>Released</h2>";
                                             }
-                                            else if ($satus_document == 5){
+                                            else if ($satus_document === "Invalid Purpose"){
                                                 echo "<p style = 'color:red;'>Invalid Purpose</p>";
                                             }
                                         ?>

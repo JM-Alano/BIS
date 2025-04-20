@@ -8,11 +8,17 @@ src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
 }
 .search_div{
   margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
 }
- .add_btn_manage{
+.sub_div{
+  display: flex;
+}
+ .sub_div .add_btn_manage, .sub_div .export_btn_manage{
+  height: 20px;
   border: none;
   border-radius: 4px;
-  padding: 15px;
+  padding: 10px;
   background-color: var(--2nd-bg-color);
   color: var(--bg-color);
   cursor: pointer;
@@ -22,11 +28,13 @@ src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
   letter-spacing: 2px;
   margin-left: 50px;
   display: block;
+  
 }
+
 table{
 border: 2px solid rgba(228, 228, 228, 0.39);
 margin-left:40px;
-margin-top: 20px;
+margin-top: -40px;
 background-color: rgba(226, 226, 226, 0.322);
 width: 95%;
 border-collapse: collapse;

@@ -51,11 +51,11 @@
             font-family: "sub_text";
         }
         .input {
-            margin-top: -20px;
+            margin-top: 20px;
             border-radius: 4px;
             border: 2px solid #4A9D4f;
             padding: 10px;
-            margin-left: -50px;
+            margin-left: 0px;
         }
         .button {
             padding: 10px;
@@ -66,7 +66,7 @@
             width: 100px;
             border: none;
             cursor: pointer;
-            margin-left: -50px;
+            margin-left: 0px;
         }
         .button:hover {
             background-color: rgb(70, 198, 248);
@@ -118,24 +118,24 @@
 
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 // Process the CSV data (assuming the CSV columns match your database)
-                $subject = trim($data[0]);
+               
+               
+               
+                $complainant = trim($data[0]);
                 $cell_no = trim($data[1]);
-                $place = trim($data[2]);
+                $date = date("Y-m-d", strtotime($data[2]));
+                $time = date("h:i:s A", strtotime($data[3]));
+                $type = trim($data[4]);
+                $status = trim($data[5]);
+                $subject = trim($data[6]);
+                $place = trim($data[7]);
+                $tanod = trim($data[8]);
+                $age = trim($data[9]);
+                $address_complainant = trim($data[10]);
+                $complained_name = trim($data[11]);
+                $add_complained_name = trim($data[12]);
+                $details_reason = trim($data[13]);
 
-                $tanod = trim($data[3]);
-                $date = date("Y-m-d", strtotime($data[4]));
-                $time = date("h:i:s A", strtotime($data[5]));
-
-                $status = trim($data[6]);
-                $complainant = trim($data[7]);
-                $age = trim($data[8]);
-
-                $address_complainant = trim($data[9]);
-                $complained_name = trim($data[10]);
-                $add_complained_name = trim($data[11]);
-
-                $details_reason = trim($data[12]);
-                $type = trim($data[13]);
 
                 // Insert data into the database
                 mysqli_query($conn, "INSERT INTO barangay_blotter VALUES('$subject', '$cell_no', '$place', '$tanod' , '$date' , '$time' , '$status' , '' , '$complainant' , '$age' , '$address_complainant' , '$complained_name' , '$add_complained_name' , '$details_reason' , '$type')");

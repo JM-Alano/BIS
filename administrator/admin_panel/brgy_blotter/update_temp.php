@@ -47,9 +47,9 @@
             <label for="">STATUS :</label><br>
                 <select name="status_upd" id="status_blotter" required>
                      <option value="" readonly>--Select Blotter Status--</option>
-                    <option value=1>Active</option>
-                    <option value=2>Settled</option>
-                    <option value=3>Scheduled</option>
+                    <option value="Active">Active</option>
+                    <option value="Settled">Settled</option>
+                    <option value="Scheduled">Scheduled</option>
                 </select><br>
                     <input type="hidden" name = "id_blotter" id = "id_blotter">
                 <input type="hidden" name = "type_of_blotter" id = "type_blotter"value = "Blotter">

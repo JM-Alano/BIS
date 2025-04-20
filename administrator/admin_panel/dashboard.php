@@ -44,6 +44,7 @@
     .h2{
         font-family:"sub_text";
         color:#4B9D4E;
+        text-align:center;
     }
   
   </style>
@@ -282,7 +283,7 @@
       data: {
         labels: ['Total', 'Completed', 'Pending' , 'Male', 'Female', 'Prepare Not'],
         datasets: [{
-          label: 'Votes',
+          label: '',
           data: [<?php population_total()?>, <?php completed_total()?>, <?php pending_total()?> ,<?php document_male_total()?>, <?php document_female_total()?>, <?php document_prefer_total()?>,<?php completed_total()?>],
           backgroundColor: ['#4CC250', '#58A7C7', '#EEA41D'],
           borderColor: ['#4CC250', '#58A7C7', '#EEA41D'],
@@ -295,13 +296,13 @@
           legend: {
             labels: {
               font: {
-                size: 14
+                size: -1
               },
               color: '#333'
             }
           },
           title: {
-            display: false
+            display: true
           }
         },
         scales: {

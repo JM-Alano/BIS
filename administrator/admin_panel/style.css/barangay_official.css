@@ -407,8 +407,11 @@ caption {
   color: #005720;
   font-family: "sub_text";
   transition: all 0.5s ease;
+  font-size: 0.8rem;
 }
-
+.limit-selector label{
+  font-size: 1rem;
+}
 .limit-selector select {
   padding: 5px;
   border-radius: 4px;
@@ -504,8 +507,12 @@ caption {
   color: #005720;
   font-family: "sub_text";
   transition: all 0.5s ease;
-}
+  font-size: 0.8rem;
 
+}
+.limit-selector label{
+  font-size: 1rem;
+}
 .limit-selector select {
   padding: 5px;
   border-radius: 4px;

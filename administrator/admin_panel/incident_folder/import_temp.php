@@ -113,32 +113,36 @@
 
         // CSV processing logic
         if (($handle = fopen($targetDirectory, "r")) !== FALSE) {
-            // Skip the first row if it contains headers
+            // Skip the header
             fgetcsv($handle);
-
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                // Process the CSV data (assuming the CSV columns match your database)
         
-                $date = date("Y-m-d", strtotime($data[0]));
-                $time = date("h:i:s A", strtotime($data[1]));
-
-                $name_involve = trim($data[2]);
-                $address = trim($data[3]);
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $name_involve = trim($data[0]);
+                $address = trim($data[1]);
+                $date = date("Y-m-d", strtotime($data[2]));
+                $time = date("h:i:s A", strtotime($data[3]));
                 $vehicle = trim($data[4]);
-
                 $license = trim($data[5]);
                 $plate_no = trim($data[6]);
-                $cause_incident = trim($data[7]);
-
-                $status = trim($data[8]);
-               
-
-                // Insert data into the database
+        
+                $status_text = trim($data[7]);
+                $status = 0;
+                if ($status_text == "Active") {
+                    $status = 1;
+                } elseif ($status_text == "Settled") {
+                    $status = 2;
+                } elseif ($status_text == "Scheduled") {
+                    $status = 3;
+                }
+        
+                $cause_incident = trim($data[8]);
+        
                 mysqli_query($conn, "INSERT INTO barangay_incident VALUES('', '$date', '$time', '$name_involve', '$address' , '$vehicle' , '$license' , '$plate_no' , '$cause_incident' , '$status')");
             }
+        
             fclose($handle);
         }
-
+        
         echo "
         <script>
             alert('Successfully Imported');

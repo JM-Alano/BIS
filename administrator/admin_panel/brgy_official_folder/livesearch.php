@@ -15,10 +15,7 @@ require("../../../database/conn_db.php");
 $input = $_POST['input']; 
 
 // Fetch records for the current page
-$sql = "SELECT * FROM barangay_official 
-        WHERE (fullname LIKE '{$input1}%' OR id LIKE '{$input1}%' OR chairmanship LIKE '{$input1}%' OR position LIKE '{$input1}%' OR term_start LIKE '{$input1}%' OR term_end LIKE '{$input1}%')
-        AND (fullname LIKE '{$input2}%' OR id LIKE '{$input2}%' OR chairmanship LIKE '{$input2}%' OR position LIKE '{$input2}%' OR term_start LIKE '{$input2}%' OR term_end LIKE '{$input2}%')";
-
+$sql =  "SELECT * FROM barangay_official WHERE fullname LIKE '{$input}%' OR id LIKE '{$input}%' OR id LIKE '{$input}%' OR chairmanship LIKE '{$input}%' OR position LIKE '{$input}%' OR term_start LIKE '{$input}%' OR term_end LIKE '{$input}%'";
 
 
 $result = $conn->query($sql);

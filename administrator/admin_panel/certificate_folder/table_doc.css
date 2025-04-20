@@ -7,9 +7,9 @@ src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
     src: url(../../../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
 }
 .search_div{
-  margin-top: 40px;
+  margin-top: 0px;
 }
- .add_btn_manage{
+ .add_btn_manage,.export_btn_manage{
   border: none;
   border-radius: 4px;
   padding: 15px;
@@ -21,8 +21,9 @@ src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
   transition: all 0.5s ease;
   letter-spacing: 2px;
   margin-left: 50px;
-  display: block;
+  
 }
+
 table{
 border: 2px solid rgba(228, 228, 228, 0.39);
 margin-left:40px;

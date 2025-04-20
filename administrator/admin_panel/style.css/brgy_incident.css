@@ -426,10 +426,12 @@ margin-left: 0px;
 color: #005720;
 font-family: "sub_text";
 transition: all 0.5s ease;
-font-size: 1.2rem;
+
 
 }
-
+.limit-selector label{
+  font-size: 1rem;
+}
 .limit-selector select {
 padding: 5px;
 border-radius: 4px;
@@ -438,7 +440,7 @@ width: max-content;
 color: #005720;
 height: max-content;
 background-color: white;
-margin-top: 20px;
+margin-top: 0px;
 }
 
 
@@ -533,10 +535,13 @@ margin-top: 20px;
   color: #005720;
   font-family: "sub_text";
   transition: all 0.5s ease;
-  font-size: 1.2rem;
+
+
   
   }
-  
+  .limit-selector label{
+    font-size: 0.9rem;
+  }
   .limit-selector select {
   padding: 5px;
   border-radius: 4px;
@@ -545,7 +550,7 @@ margin-top: 20px;
   color: #005720;
   height: max-content;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 0px;
   }
   
 }

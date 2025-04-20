@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Table</title>
+    <title>User Registered List</title>
     <style>
-       
-       @font-face {
+        @font-face {
             font-family: "main_text";
-        src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
+            src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
         }
         @font-face {
             font-family: "sub_text";
@@ -23,6 +22,7 @@
             background-color:#4A9D4f;
             border-radius: 4px;
             width: 93%;
+            transition: all 0.5s ease;
         }
         .sidebar.active ~ .dashboard_content .table-footer{
             width: 92vw;
@@ -39,16 +39,92 @@
             color:#FCFAEE;
             font-family:"sub_text";
         }
-        @media only screen and (min-width: 1441px) {
-            .table-footer{
+        .filter-container {
+            margin-bottom: 15px;
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            padding: 10px;
-            margin-left:40px;
-            background-color:#4A9D4f;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .limit-selector{
+            margin-top:80px;
+     
+            margin-left:0px;
+        }
+        .limit-selector form{
+            margin-bottom:10px;
+        }
+       
+        .filter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .filter-group label {
+            font-family: "sub_text";
+            font-size: 1rem;
+            margin-left:0px;
+        }
+        .filter-group select, 
+        .filter-group input {
+            padding: 5px;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            width: 96%;
+            font-family: "sub_text";
+            
+        }
+        .filter-btn {
+            padding: 5px 15px;
+            background-color: rgb(93,185,255);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "sub_text";
+        }
+        .filter-btn:hover {
+            background-color: rgb(86, 202, 255);
+        }
+        .reset-btn {
+            padding: 5px 15px;
+            background-color: rgb(93,185,255);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "sub_text";
+        }
+        .reset-btn:hover {
+            background-color: rgb(94, 202, 252);
+        }
+        .export-btn {
+            padding: 5px 15px;
+            background-color: rgb(212,182,47);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "sub_text";
+        }
+        .export-btn:hover {
+            background-color: rgb(252, 217, 64);
+        }
+        @media only screen and (min-width: 1441px) {
+            .table-footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                padding: 10px;
+                margin-left:40px;
+                background-color:#4A9D4f;
+                border-radius: 4px;
+                width: 96%;
             }
         }
     </style>
@@ -59,14 +135,57 @@
     <?php 
     require("../../database/conn_db.php");
 
+    // Get filter parameters from query string
+    $name_filter = isset($_GET['name_filter']) ? $_GET['name_filter'] : '';
+    $date_from = isset($_GET['date_from']) ? $_GET['date_from'] : '';
+    $date_to = isset($_GET['date_to']) ? $_GET['date_to'] : '';
+    $gender_filter = isset($_GET['gender_filter']) ? $_GET['gender_filter'] : '';
+    $year_filter = isset($_GET['year_filter']) ? $_GET['year_filter'] : '';
+
+
     // Get the current page and limit from query parameters, set defaults if not provided
     $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
     $limit = isset($_GET['limit']) ? max(1, (int)$_GET['limit']) : 10;
     $offset = ($page - 1) * $limit;
 
-    // Get the total number of records from the correct table
-    $countQuery = "SELECT COUNT(*) AS total FROM user_account";
-    $countResult = $conn->query($countQuery);
+    // Build the base query with filters
+    $whereClause = [];
+    $params = [];
+    $types = '';
+
+    if (!empty($name_filter)) {
+        $whereClause[] = "(firstname LIKE ? OR middlename LIKE ? OR lastname LIKE ?)";
+        $params[] = "%$name_filter%";
+        $params[] = "%$name_filter%";
+        $params[] = "%$name_filter%";
+        $types .= 'sss';
+    }
+
+    if (!empty($year_filter)) {
+        $whereClause[] = "YEAR(date_registered) = ?";
+        $params[] = $year_filter;
+        $types .= 'i';
+    }
+    
+
+    if (!empty($gender_filter)) {
+        $whereClause[] = "gender = ?";
+        $params[] = $gender_filter;
+        $types .= 's';
+    }
+
+    $whereSQL = !empty($whereClause) ? 'WHERE ' . implode(' AND ', $whereClause) : '';
+
+    // Get the total number of records with filters applied
+    $countQuery = "SELECT COUNT(*) AS total FROM user_account $whereSQL";
+    $countStmt = $conn->prepare($countQuery);
+
+    if (!empty($params)) {
+        $countStmt->bind_param($types, ...$params);
+    }
+
+    $countStmt->execute();
+    $countResult = $countStmt->get_result();
     $totalRows = $countResult->fetch_assoc()['total'];
     $totalPages = max(1, ceil($totalRows / $limit));
 
@@ -74,15 +193,64 @@
     $startRow = ($page - 1) * $limit + 1;
     $endRow = min($page * $limit, $totalRows);
 
-    // Get the actual data based on the page and limit
-    $sql = "SELECT * FROM user_account ORDER BY user_id DESC LIMIT $limit OFFSET $offset";
-    $result = $conn->query($sql);
+    // Fetch the records based on the current page, limit and filters
+    $sql = "SELECT * FROM user_account $whereSQL ORDER BY user_id DESC LIMIT ? OFFSET ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!empty($params)) {
+        $params[] = $limit;
+        $params[] = $offset;
+        $types .= 'ii';
+        $stmt->bind_param($types, ...$params);
+    } else {
+        $stmt->bind_param('ii', $limit, $offset);
+    }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
     ?>
 
-    <?php if ($result->num_rows > 0): ?>
+  
 
     <!-- Limit Selector -->
     <div class="limit-selector">
+    <form method="GET" action="" class="filter-form">
+            <div class="filter-group">
+                <label for="name_filter">Name:</label>
+                <input type="text" name="name_filter" id="name_filter" value="<?php echo htmlspecialchars($name_filter); ?>" placeholder="Search name...">
+            </div>
+            
+            <div class="filter-group">
+                <label for="year_filter">Year:</label>
+                <select name="year_filter" id="year_filter">
+                    <option value="">All Years</option>
+                    <?php 
+                        $currentYear = date("Y");
+                        for ($y = $currentYear; $y >= 2000; $y--) {
+                            $selected = ($year_filter == $y) ? 'selected' : '';
+                            echo "<option value='$y' $selected>$y</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+
+            
+            <div class="filter-group">
+                <label for="gender_filter">Gender:</label>
+                <select name="gender_filter" id="gender_filter">
+                    <option value="">All Genders</option>
+                    <option value="Male" <?php echo $gender_filter == 'Male' ? 'selected' : ''; ?>>Male</option>
+                    <option value="Female" <?php echo $gender_filter == 'Female' ? 'selected' : ''; ?>>Female</option>
+                </select>
+            </div>
+            
+            <input type="hidden" name="page" value="1"> <!-- Reset to page 1 when filtering -->
+            <input type="hidden" name="limit" value="<?php echo $limit; ?>">
+            
+            <button type="submit" class="filter-btn">Filter</button>
+            <button type="button" class="reset-btn" onclick="window.location.href='?page=1&limit=<?php echo $limit; ?>'">Reset</button>
+            <button type="button" class="export-btn" id="export-btn">Export</button>
+        </form>
         <form method="GET" action="">
             <label for="limit">Rows per page:</label>
             <select name="limit" id="limit" onchange="this.form.submit()">
@@ -90,9 +258,18 @@
                 <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
                 <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
             </select>
+            <!-- Preserve filter values when changing limit -->
+            <input type="hidden" name="year_filter" value="<?php echo htmlspecialchars($year_filter); ?>">
+
+            <input type="hidden" name="name_filter" value="<?php echo htmlspecialchars($name_filter); ?>">
+            <input type="hidden" name="date_from" value="<?php echo htmlspecialchars($date_from); ?>">
+            <input type="hidden" name="date_to" value="<?php echo htmlspecialchars($date_to); ?>">
+            <input type="hidden" name="gender_filter" value="<?php echo htmlspecialchars($gender_filter); ?>">
             <input type="hidden" name="page" value="<?php echo $page; ?>">
         </form>
     </div>
+
+    <?php if ($result->num_rows > 0): ?>
 
     <table>
         <caption>User Registered List</caption>
@@ -106,15 +283,15 @@
         </tr>
         <?php
         while($row = $result->fetch_assoc()) {
-            $id_registered =$row["user_id"];
-            $firstname =$row["firstname"];
-            $middlename =$row["middlename"];
-            $lastname =$row["lastname"];
-            $gender =$row["gender"];
-            $age =$row["age"];
-            $email =$row["email"];
-            $password=$row["password"];
-            $date_registered=$row["date_registered"];
+            $id_registered = $row["user_id"];
+            $firstname = $row["firstname"];
+            $middlename = $row["middlename"];
+            $lastname = $row["lastname"];
+            $gender = $row["gender"];
+            $age = $row["age"];
+            $email = $row["email"];
+            $password = $row["password"];
+            $date_registered = $row["date_registered"];
         ?>
         <tr class="table_hover">
             <td hidden><?php echo $firstname;?></td>
@@ -160,17 +337,18 @@
     <!-- Pagination Controls -->
     <div class="pagination">
         <?php if ($page > 1): ?>
-            <a href="?page=<?php echo $page - 1; ?>&limit=<?php echo $limit; ?>">Previous</a>
+            <a href="?page=<?php echo $page - 1; ?>&limit=<?php echo $limit; ?>&name_filter=<?php echo urlencode($name_filter); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&gender_filter=<?php echo urlencode($gender_filter); ?>">Previous</a>
         <?php endif; ?>
 
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="?page=<?php echo $i; ?>&limit=<?php echo $limit; ?>" class="<?php echo $i == $page ? 'active' : ''; ?>">
+            <a href="?page=<?php echo $i; ?>&limit=<?php echo $limit; ?>&name_filter=<?php echo urlencode($name_filter); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&gender_filter=<?php echo urlencode($gender_filter); ?>" 
+               class="<?php echo $i == $page ? 'active' : ''; ?>">
                 <?php echo $i; ?>
             </a>
         <?php endfor; ?>
 
         <?php if ($page < $totalPages): ?>
-            <a href="?page=<?php echo $page + 1; ?>&limit=<?php echo $limit; ?>">Next</a>
+            <a href="?page=<?php echo $page + 1; ?>&limit=<?php echo $limit; ?>&name_filter=<?php echo urlencode($name_filter); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&gender_filter=<?php echo urlencode($gender_filter); ?>">Next</a>
         <?php endif; ?>
     </div>
 
@@ -221,6 +399,36 @@
 
     <!-- UPDATE MODAL FUNCTION JS -->
     <script src="/BIS/administrator/admin_panel/user_register_folder/upd_modal.js"></script>
+
+    <script>
+    // Export functionality
+    document.getElementById('export-btn').addEventListener('click', function() {
+        const nameFilter = document.getElementById('name_filter').value;
+        const yearFilter = document.getElementById('year_filter').value;
+        const genderFilter = document.getElementById('gender_filter').value;
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = './user_register_folder/export_users.php';
+
+        function addHiddenInput(name, value) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = value;
+            form.appendChild(input);
+        }
+
+        addHiddenInput('name_filter', nameFilter);
+        addHiddenInput('year_filter', yearFilter);
+        addHiddenInput('gender_filter', genderFilter);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    });
+</script>
+
 
 </body>
 </html>

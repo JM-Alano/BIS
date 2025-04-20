@@ -17,7 +17,7 @@
                
                 $input = $_POST['input']; 
 
-                $query = "SELECT * FROM barangay_request WHERE control_no LIKE '{$input}%' OR firstname LIKE '{$input}%' OR middlename LIKE '{$input}%' OR lastname LIKE '{$input}%' OR  purpose LIKE '{$input}%' ";
+                $query = "SELECT * FROM barangay_request WHERE control_no LIKE '{$input}%' OR request_document LIKE '{$input}%' OR 	date_request LIKE '{$input}%'  OR status LIKE '{$input}%' OR middlename LIKE '{$input}%' OR lastname LIKE '{$input}%' OR  purpose LIKE '{$input}%' ";
 
                 
                 $result = mysqli_query($conn,$query);
@@ -87,24 +87,24 @@
                                         <?php
                                             $satus_document =  $row['status'] ;
 
-                                            if ($satus_document == 0){
+                                            if ($satus_document == ""){
                                                 echo "<p style = 'color:#00572060;'>No data</p>";
                                             }
-                                            else if ($satus_document == 1){
+                                            else if ($satus_document == "Pending"){
                                                 echo "<p style = 'color:red;'>Pending</p>";
                                             }
-                                            else if ($satus_document == 2){
+                                            else if ($satus_document == "Processing"){
                                                 echo "<p style = 'color:orange;'>Processing</p>";
                                             }
-                                            else if ($satus_document == 3){
+                                            else if ($satus_document == "Ready to Pick-up"){
                                                 echo "<p style = 'color:blue;'>Ready to Pick-up</p>";
 
 
                                             }
-                                            else if ($satus_document == 4){
+                                            else if ($satus_document == "Released"){
                                                 echo "<p style = 'color:#00cc0e;'>Released</p>";
                                             }
-                                            else if ($satus_document == 5){
+                                            else if ($satus_document == "Invalid Purpose"){
                                                 echo "<p style = 'color:red;'>Invalid Purpose</p>";
                                             }
                                         ?>

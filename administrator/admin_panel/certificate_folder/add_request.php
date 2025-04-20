@@ -79,12 +79,12 @@
 
             <label for="">Status</label><br>
             <select id="status_add" name = "status_add">
-                <option value=0>No data</option>
-                <option value=1>Pending</option>
-                <option value=2>Processing</option>
-                <option value=3>Ready to Pick-up</option>
-                <option value=4>Released</option>
-                <option value=5>Invalid Purpose</option>
+            <option value="No data">No data</option>
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Ready to Pick-up">Ready to Pick-up</option>
+            <option value="Released">Released</option>
+            <option value="Invalid Purpose">Invalid Purpose</option>
             </select><br>
 
       

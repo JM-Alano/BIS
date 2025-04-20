@@ -52,6 +52,22 @@
             width: 96%;
             }
         }
+        .export-btn {
+            background-color: rgb(212,182,47);
+            color: white;
+            padding:  5px;
+            height:max-content;
+            margin-top:30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size:1rem;
+            font-family: "sub_text";
+            margin-left: 10px;
+        }
+        .export-btn:hover {
+            background-color: rgb(240, 212, 86);
+        }
     </style>
 </head>
 <body>
@@ -88,6 +104,9 @@
         }
         ?>
     </select>
+    
+    <!-- Export Button -->
+    <button type="button" class="export-btn" onclick="exportToExcel()"><svg style = "width:12px; margin-right:5px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 128-168 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l168 0 0 112c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zM384 336l0-48 110.1 0-39-39c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l39-39L384 336zm0-208l-128 0L256 0 384 128z"/></svg>Export</button>
 </form>
 
 <?php 
@@ -137,7 +156,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) { ?>
 
 <div id="searchresult">
-    <table>
+    <table id="revenueTable">
         <caption>Income List</caption>
         <tr>
             <th>Fullname</th>
@@ -261,6 +280,40 @@ mysqli_close($conn);
 
 <footer style = "height:100px;">
 </footer>
+
+<script>
+function exportToExcel() {
+    // Get the current month and year from the form
+    const month = document.getElementById('month').value;
+    const year = document.getElementById('year').value;
+    
+    // Create a form dynamically
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = './revenue/export_revenue.php';
+    
+    // Add month and year as hidden inputs if they exist
+    if (month) {
+        const monthInput = document.createElement('input');
+        monthInput.type = 'hidden';
+        monthInput.name = 'month';
+        monthInput.value = month;
+        form.appendChild(monthInput);
+    }
+    
+    if (year) {
+        const yearInput = document.createElement('input');
+        yearInput.type = 'hidden';
+        yearInput.name = 'year';
+        yearInput.value = year;
+        form.appendChild(yearInput);
+    }
+    
+    // Append the form to the body and submit it
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
 
 </body>
 </html>

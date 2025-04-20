@@ -305,22 +305,26 @@
                 <td><?php echo $purpose; ?></td>
                 <td><?php echo $date_requested; ?></td>
                 <td><?php echo $control_no; ?></td>
+                
                 <td>
-                    <?php
-                    if ($status == 0) {
-                        echo "<h4 style='color:#00572060;'>No data</h4>";
-                    } else if ($status == 1) {
-                        echo "<h4 style='color:red;'>Pending</h4>";
-                    } else if ($status == 2) {
-                        echo "<h4 style='color:orange;'>Processing</h4>";
-                    } else if ($status == 3) {
-                        echo "<h4 style='color:blue;'>Ready to Pick-up</h4>";
-                    } else if ($status == 4) {
-                        echo "<h4 style='color:#00cc0e;'>Released</h4>";
-                    } else if ($status == 5) {
-                        echo "<p style='color:red;'>Invalid Purpose</p>";
-                    }
-                    ?>
+                <?php
+                $status = trim($status);
+
+                if ($status === "No data") {
+                    echo "<h4 style='color:#00572060;'>No data</h4>";
+                } else if ($status === "Pending") {
+                    echo "<h4 style='color:red;'>Pending</h4>";
+                } else if ($status === "Processing") {
+                    echo "<h4 style='color:orange;'>Processing</h4>";
+                } else if ($status === "Ready to Pick-up") {
+                    echo "<h4 style='color:blue;'>Ready to Pick-up</h4>";
+                } else if ($status === "Released") {
+                    echo "<h4 style='color:#00cc0e;'>Released</h4>";
+                } else if ($status === "Invalid Purpose") {
+                    echo "<p style='color:red;'>Invalid Purpose</p>";
+                }
+            ?>
+
                 </td>
             </tr>
             <?php

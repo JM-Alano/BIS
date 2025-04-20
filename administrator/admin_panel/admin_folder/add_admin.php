@@ -45,8 +45,7 @@
         <label for="">User Type</label><br>
         <select name="user_type" id="">
             <option value="ADMINISTRATOR">ADMINISTRATOR</option>
-            <option value="SECRETARY">SECRETARY</option>
-            <option value="OFFICER">OFFICER</option>
+   
         </select><br>
         <label for="">Status</label><br>
         <select name="status" id="" required>

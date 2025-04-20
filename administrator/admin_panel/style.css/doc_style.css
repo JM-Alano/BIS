@@ -120,7 +120,8 @@ body{
       display: none;
       
    }
-   .add_btn_manage{
+   
+   .sub_div .add_btn_manage,  .sub_div .export_btn_manage{
     display: none;
    }
 
@@ -250,8 +251,8 @@ body{
       display: none;
       
    }
-   .add_btn_manage{
-    display: none;
+   .add_btn_manage,.export_btn_manage{
+    display: block;
    }
 
 }

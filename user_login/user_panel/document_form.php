@@ -130,7 +130,7 @@
             <input type="hidden"name = "user_id" id = "user_id_my_profile_id" required><br>
             <input type="hidden"name = "profile_user" id = "profile_user_display" required><br>
             <input type="hidden"name = "id" id = "id_my_profile_id" required><br>
-            <input type="hidden"name = "status" id = "status" value = 1 required><br>
+            <input type="hidden"name = "status" id = "status" value = "Pending" required><br>
 
             <div class = "submit_reset_return_div">
                 <input type="reset" id = "reset" >

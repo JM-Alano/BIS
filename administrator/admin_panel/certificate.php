@@ -97,7 +97,7 @@
                     </li>
                          <div class = "sub_certification_folder">
 
-                         
+                        
                          <button id = "certificate" type ="button" onclick="loadContent('certificate_folder/certificate.php')">Barangay Certificate</button>
                          
                          <button id = "clearance" onclick="loadContent('certificate_folder/clearance.php')" >Barangay Clearance</button>
@@ -149,13 +149,19 @@
          
 
                 
-
-                <div class = "search_div">
-                            <!-- SEARCH BUTTON -->
-                            <input type="text" id="live_search" placeholder="All Search" >
-
-                            <button id = "add_list" class = "add_btn_manage">+Add</button>
+            <div class="search_div" >
+                <div class = "sub_div">
+                    <button id="add_list" class="add_btn_manage"><svg style = "width:13px; fill :white; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>Add</button>
+                    <button style = "background-color:rgb(212,182,47); margin-left:5px;" class="export_btn_manage" id="export_btn" class="export_btn_manage"><svg style = "width:12px; margin-right:5px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 128-168 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l168 0 0 112c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zM384 336l0-48 110.1 0-39-39c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l39-39L384 336zm0-208l-128 0L256 0 384 128z"/></svg>Export</button>
+         
                 </div>
+               
+                <input type="text" id="live_search" placeholder="All Search" style = "z-index:1;">
+
+               
+                
+            </div>
+
                                  
                      
                      <div id = "content_certificate">
@@ -268,27 +274,30 @@
         <!-- AJAX SCRIPT FOR SEARCH BUTTON -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-        <script type = "text/javascript" >
-                $(document).ready(function(){
-                $("#live_search").keyup(function(){
-                    var input = $(this).val();
-                    // alert(input);
-
-                    if(input != ""){
-                        $.ajax({
-                            url: "./certificate_folder/livesearch_cert.php",
-                            method: "POST",
-                            data: {input:input},
-
-                            success:function (data){
-                                $("#searchresult").html(data);
-                            }
-                        });
-                    }
-
-                });
+     <script type="text/javascript">
+$(document).ready(function() {
+    $("#live_search").keyup(function() {
+        var input = $(this).val();
+        if(input != ""){
+            $.ajax({
+                url: "./certificate_folder/livesearch_cert.php",
+                method: "POST",
+                data: {input: input},
+                success: function(data){
+                    $("#searchresult").html(data);
+                }
             });
-        </script>
+        }
+    });
+
+    // EXPORT BUTTON CLICK
+    $("#export_btn").click(function(){
+        var input = $("#live_search").val();
+        window.location.href = "export_cert.php?input=" + encodeURIComponent(input);
+    });
+});
+</script>
+
              
         
 </body>

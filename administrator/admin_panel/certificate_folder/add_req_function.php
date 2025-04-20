@@ -29,6 +29,8 @@
         date_default_timezone_set("Asia/Manila");
         $date_request = date("Y-m-d");
 
+        $control_no =  $id . date("hs");
+
         $fileName = $_FILES["image"]["name"];
         $fileSize =$_FILES["image"]["size"];
         $tmpName = $_FILES["image"]["tmp_name"];
@@ -72,10 +74,10 @@
             move_uploaded_file($tmpName, '../../../asset/image/user_profile/'. $newImageName );
 
            
-            $sql = "INSERT INTO barangay_request (firstname, middlename, lastname, age, 	request_document, house_number, birthday, place_of_birth, contact_no, contact_person, contact_no_contact_person, live_since_year, 	purpose, 	status, gender ,sitio_pook, date_request, profile)
+            $sql = "INSERT INTO barangay_request (firstname, middlename, lastname, age, 	request_document, house_number, birthday, place_of_birth, contact_no, contact_person, contact_no_contact_person, live_since_year, 	purpose, 	status, gender ,sitio_pook, date_request, profile , control_no)
             VALUES ( '$firstname', '$middlename','$lastname','$age','$request_document' 
             ,'$house_no','$birthday','$place_of_birth','$contact_no','$contact_person','$contact_no_contact_person','$live_since_year','$purpose'
-            ,'$status','$gender','$sitio_pook', '$date_request' , '$newImageName')";
+            ,'$status','$gender','$sitio_pook', '$date_request' , '$newImageName', '$control_no')";
 
 
             $result = mysqli_query($conn, $sql);

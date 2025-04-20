@@ -75,28 +75,29 @@
                                     <td><?php echo $purpose; ?></td>
                                     
                                     <td><?php echo  date('m/d/Y',strtotime($date_request));?></td>
-                                    <td  style = 'color:blue;'>
-                                        <?php
-                                            $satus_document =  $row['status'] ;
+                                    
+                                    <td >
+                                    <?php
+                                            $status_document =  trim($row['status']);
 
-                                            if ($satus_document == 0){
+                                            if ($status_document == "No data"){
                                                 echo "<p style = 'color:#00572060;'>No data</p>";
                                             }
-                                            else if ($satus_document == 1){
+                                            else if ($status_document == "Pending"){
                                                 echo "<p style = 'color:red;'>Pending</p>";
                                             }
-                                            else if ($satus_document == 2){
+                                            else if ($status_document == "Processing"){
                                                 echo "<p style = 'color:orange;'>Processing</p>";
                                             }
-                                            else if ($satus_document == 3){
+                                            else if ($status_document == "Ready to Pick-up"){
                                                 echo "<p style = 'color:blue;'>Ready to Pick-up</p>";
 
 
                                             }
-                                            else if ($satus_document == 4){
+                                            else if ($status_document == "Released"){
                                                 echo "<p style = 'color:#00cc0e;'>Released</p>";
                                             }
-                                            else if ($satus_document == 5){
+                                            else if ($status_document == "Invalid Purpose"){
                                                 echo "<p style = 'color:red;'>Invalid Purpose</p>";
                                             }
                                         ?>
